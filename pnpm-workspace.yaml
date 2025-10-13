@@ -1,0 +1,16 @@
+packages:
+  - apps/*
+  - packages/*
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - '@prisma/client'
+  - '@prisma/engines'
+  - '@swc/core'
+  - '@tailwindcss/oxide'
+  - bufferutil
+  - cbor-extract
+  - esbuild
+  - msgpackr-extract
+  - prisma
+  - utf-8-validate

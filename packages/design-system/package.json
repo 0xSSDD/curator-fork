@@ -1,0 +1,41 @@
+{
+  "name": "@geo/design-system",
+  "version": "0.0.1",
+  "description": "Geo Design system",
+  "keywords": [
+    "Geo",
+    "Design System",
+    "React"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "directory": "publish",
+    "provenance": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/graphprotocol/curator-app.git",
+    "directory": "packages/design-system"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": [],
+  "scripts": {
+    "test": "vitest",
+    "build": "echo 'No build required'"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^19.1.10",
+    "@vitejs/plugin-react": "^5.0.1",
+    "react": "^19.1.1"
+  },
+  "dependencies": {}
+}

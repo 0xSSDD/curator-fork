@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": [],
+  "references": [
+    { "path": "packages/design-system" },
+    { "path": "apps/curator-backend" },
+    { "path": "apps/curator-frontend" }
+  ]
+}

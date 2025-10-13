@@ -1,0 +1,34 @@
+name: Tests and Checks
+
+on: [push]
+
+jobs:
+  build-test-check:
+    name: Install deps, build required package, typecheck, lint and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: "package.json"
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Generate Prisma Client
+        working-directory: apps/curator-backend
+        run: pnpm prisma generate
+      - name: Build
+        run: pnpm build
+      - name: Configure Git for tests
+        run: |
+          git config --global user.email "test@example.com"
+          git config --global user.name "Test User"
+      - name: Typecheck
+        run: pnpm check
+      - name: Linting & Formatting
+        run: pnpm lint
+      - name: Test
+        run: pnpm test

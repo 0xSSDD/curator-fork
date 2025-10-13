@@ -1,0 +1,31 @@
+{
+  "name": "curator-backend",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch ./src/index.ts",
+    "build": "tsup",
+    "prisma": "prisma",
+    "prebuild": "prisma generate"
+  },
+  "dependencies": {
+    "@effect/opentelemetry": "^0.56.6",
+    "@effect/platform": "^0.90.10",
+    "@effect/platform-node": "^0.96.1",
+    "@noble/hashes": "^1.8.0",
+    "@prisma/client": "^6.14.0",
+    "@privy-io/server-auth": "^1.32.0",
+    "cors": "^2.8.5",
+    "effect": "^3.17.13",
+    "prisma": "^6.14.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/node": "^24.1.0",
+    "tsup": "^8.4.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
