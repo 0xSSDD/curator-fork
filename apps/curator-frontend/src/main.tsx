@@ -41,7 +41,6 @@ if (rootElement && !rootElement.innerHTML) {
       <HypergraphAppProvider appId="93bb8907-085a-4a0e-83dd-62b0dc98e793">
         <RouterProvider router={router} />
       </HypergraphAppProvider>
-      ,
     </PrivyProvider>,
     // </React.StrictMode>,
   );
