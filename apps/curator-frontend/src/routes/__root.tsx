@@ -23,7 +23,7 @@ const Root = () => {
     <>
       <header>
         <h1>
-          <Link to="/" className="text-2xl font-bold hover:text-blue-600">
+          <Link to="/" className="text-2xl hover:text-blue-600">
             Curator
           </Link>
         </h1>
