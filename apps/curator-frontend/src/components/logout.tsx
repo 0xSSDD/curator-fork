@@ -1,21 +1,21 @@
-import { useHypergraphApp, useHypergraphAuth } from '@graphprotocol/hypergraph-react';
+import { Button } from '@geo/design-system';
+import { usePrivy } from '@privy-io/react-auth';
 import { useRouter } from '@tanstack/react-router';
 
 export function Logout() {
-  const { logout } = useHypergraphApp();
-  const { authenticated } = useHypergraphAuth();
+  const { logout: privyLogout } = usePrivy();
   const router = useRouter();
 
   const handleLogout = () => {
-    logout();
+    privyLogout();
     router.navigate({
-      to: '/login',
+      to: '/',
     });
   };
 
   return (
-    <button type="button" onClick={handleLogout} disabled={!authenticated}>
+    <Button type="button" onClick={handleLogout}>
       Logout
-    </button>
+    </Button>
   );
 }
