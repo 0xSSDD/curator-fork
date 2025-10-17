@@ -3,6 +3,7 @@ import { createRouter, RouterProvider } from '@tanstack/react-router';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
+import { PrivyProvider } from '@privy-io/react-auth';
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
 
@@ -22,9 +23,25 @@ if (rootElement && !rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     // <React.StrictMode>
-    <HypergraphAppProvider appId="93bb8907-085a-4a0e-83dd-62b0dc98e793">
-      <RouterProvider router={router} />
-    </HypergraphAppProvider>,
+    <PrivyProvider
+      appId={import.meta.env.VITE_PRIVY_APP_ID}
+      config={{
+        loginMethods: ['email', 'google'],
+        appearance: {
+          theme: 'light',
+          accentColor: '#6833ff',
+        },
+        embeddedWallets: {
+          ethereum: {
+            createOnLogin: 'users-without-wallets',
+          },
+        },
+      }}
+    >
+      <HypergraphAppProvider appId="93bb8907-085a-4a0e-83dd-62b0dc98e793">
+        <RouterProvider router={router} />
+      </HypergraphAppProvider>
+    </PrivyProvider>,
     // </React.StrictMode>,
   );
 }

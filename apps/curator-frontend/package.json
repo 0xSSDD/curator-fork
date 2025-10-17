@@ -12,23 +12,18 @@
     "typesync": "hg typesync --open"
   },
   "dependencies": {
+    "@geo/design-system": "workspace:*",
     "@graphprotocol/hypergraph": "0.8.0",
     "@graphprotocol/hypergraph-react": "0.8.0",
-    "@geo/design-system": "workspace:*",
-    "@radix-ui/react-navigation-menu": "^1.2.14",
-    "@radix-ui/react-slot": "^1.2.3",
-    "@radix-ui/react-tooltip": "^1.2.8",
+    "@privy-io/react-auth": "^3.3.0",
     "@tailwindcss/vite": "^4.1.12",
     "@tanstack/react-query": "^5.85.5",
     "@tanstack/react-router": "^1.131.27",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
     "effect": "^3.17.13",
-    "lucide-react": "^0.541.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.12",
+    "viem": "^2.38.2",
     "vite": "^7.1.3"
   },
   "devDependencies": {
