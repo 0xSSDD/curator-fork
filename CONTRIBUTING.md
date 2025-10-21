@@ -9,7 +9,7 @@ cp .env.example .env
 # add the PRIVY_APP_SECRET & PRIVY_APP_ID to the apps/curator-backend/.env file
 cd apps/curator-frontend
 cp .env.example .env
-# add the VITE_PRIVY_APP_ID & VITE_HYPERGRAPH_RPC_URL to the apps/curator-frontend/.env file
+# add the VITE_PRIVY_APP_ID to the apps/curator-frontend/.env file
 pnpm prisma migrate dev
 ```
 
