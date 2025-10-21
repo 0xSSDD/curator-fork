@@ -8,7 +8,6 @@ import * as Api from './api.js';
 const HealthGroupLive = HttpApiBuilder.group(Api.curatorApi, 'Health', (handlers) => {
   return handlers.handle('status', () => Effect.succeed('OK'));
 });
-1;
 
 /**
  * All handlers combined
