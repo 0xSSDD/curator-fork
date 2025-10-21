@@ -1,6 +1,7 @@
 import { useGeoAccount } from '@geo/design-system';
 import { createFileRoute } from '@tanstack/react-router';
 import { EditProfile } from '@/components/edit-profile';
+import { network } from '@/config';
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -21,8 +22,8 @@ function Index() {
     if (geoAccount.onboardingStep === 'edit-profile') {
       return (
         <EditProfile
-          onSubmit={({ name, githubUrl, xUrl, linkedinUrl }) => {
-            geoAccount.createAccount({ name, githubUrl, xUrl, linkedinUrl });
+          onSubmit={({ name, githubUrl, xUrl, linkedinUrl, avatarData }) => {
+            geoAccount.createAccount({ name, githubUrl, xUrl, linkedinUrl, avatarData, network });
           }}
         />
       );

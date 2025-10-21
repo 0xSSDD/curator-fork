@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@geo/design-system": "workspace:*",
+    "@graphprotocol/grc-20": "^0.25.5",
     "@graphprotocol/hypergraph": "0.8.0",
     "@graphprotocol/hypergraph-react": "0.8.0",
     "@privy-io/react-auth": "^3.3.0",

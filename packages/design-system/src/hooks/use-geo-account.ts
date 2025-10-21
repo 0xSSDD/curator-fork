@@ -1,7 +1,8 @@
-import { Graph } from '@graphprotocol/grc-20';
+import { Graph, type Id, type Op } from '@graphprotocol/grc-20';
 import { usePrivy, useWallets } from '@privy-io/react-auth';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useState } from 'react';
+import type { Network } from '../types.js';
 import { createAccountSpace } from '../utils/create-account-space.js';
 import { fetchGeoProfile } from '../utils/fetch-geo-profile.js';
 
@@ -17,6 +18,8 @@ export type GeoAccountState =
         githubUrl: string;
         xUrl: string;
         linkedinUrl: string;
+        avatarData: { id: Id; ops: Op[]; cid: string } | undefined;
+        network: Network;
       }) => Promise<{ accountId: string; spaceId: string; spaceEntityId: string } | null>;
       profile: { name: string } | null | undefined;
     };
@@ -33,11 +36,15 @@ export const useGeoAccount = (): GeoAccountState => {
       githubUrl,
       xUrl,
       linkedinUrl,
+      avatarData,
+      network,
     }: {
       name: string;
       githubUrl: string;
       xUrl: string;
       linkedinUrl: string;
+      avatarData: { id: Id; ops: Op[]; cid: string } | undefined;
+      network: Network;
     }) => {
       setIsCreatingAccountSpace(true);
       try {
@@ -51,6 +58,8 @@ export const useGeoAccount = (): GeoAccountState => {
           githubUrl,
           xUrl,
           linkedinUrl,
+          avatarData,
+          network,
         });
         queryClient.invalidateQueries({ queryKey: ['current-user-profile'] });
         setIsCreatingAccountSpace(false);

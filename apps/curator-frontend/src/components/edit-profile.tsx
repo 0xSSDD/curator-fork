@@ -1,3 +1,8 @@
+import { AvatarUpload } from '@geo/design-system';
+import type { Id, Op } from '@graphprotocol/grc-20';
+import { useState } from 'react';
+import { network } from '@/config';
+
 export const EditProfile = ({
   onSubmit,
 }: {
@@ -6,13 +11,17 @@ export const EditProfile = ({
     githubUrl,
     xUrl,
     linkedinUrl,
+    avatarData,
   }: {
     name: string;
     githubUrl: string;
     xUrl: string;
     linkedinUrl: string;
+    avatarData: { id: Id; ops: Op[]; cid: string } | undefined;
   }) => void;
 }) => {
+  const [avatarData, setAvatarData] = useState<{ id: Id; ops: Op[]; cid: string } | undefined>(undefined);
+
   return (
     <div>
       <p>Fill out your profile</p>
@@ -27,13 +36,15 @@ export const EditProfile = ({
           if (!name) {
             return;
           }
-          onSubmit({ name, githubUrl, xUrl, linkedinUrl });
+          onSubmit({ name, githubUrl, xUrl, linkedinUrl, avatarData });
         }}
       >
+        <AvatarUpload network={network} onUpload={(newAvatarData) => setAvatarData(newAvatarData)} />
         <input type="text" name="name" placeholder="Name" />
         <input type="text" name="xUrl" placeholder="X URL" />
         <input type="text" name="linkedinUrl" placeholder="LinkedIn URL" />
         <input type="text" name="githubUrl" placeholder="GitHub URL" />
+
         <button type="submit">Save</button>
       </form>
     </div>

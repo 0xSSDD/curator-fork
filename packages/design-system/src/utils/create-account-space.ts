@@ -1,4 +1,14 @@
-import { Account, Graph, Id, IdUtils, type Op, type PropertiesParam, SystemIds } from '@graphprotocol/grc-20';
+import {
+  Account,
+  ContentIds,
+  Graph,
+  Id,
+  IdUtils,
+  type Op,
+  type PropertiesParam,
+  SystemIds,
+} from '@graphprotocol/grc-20';
+import type { Network } from '../types.js';
 import { GITHUB_URL_PROPERTY_ID, LINKEDIN_URL_PROPERTY_ID, X_URL_PROPERTY_ID } from './property-ids.js';
 
 type CreateAccountSpaceParams = {
@@ -7,6 +17,8 @@ type CreateAccountSpaceParams = {
   githubUrl: string;
   xUrl: string;
   linkedinUrl: string;
+  avatarData: { id: Id; ops: Op[]; cid: string } | undefined;
+  network: Network;
 };
 
 export const createAccountSpace = async ({
@@ -15,6 +27,8 @@ export const createAccountSpace = async ({
   githubUrl,
   xUrl,
   linkedinUrl,
+  avatarData,
+  network,
 }: CreateAccountSpaceParams) => {
   const spaceEntityId = IdUtils.generate();
 
@@ -47,6 +61,15 @@ export const createAccountSpace = async ({
     ops.push(...updateEntityOps);
   }
 
+  if (avatarData) {
+    const { ops: avatarRelationOps } = Graph.createRelation({
+      fromEntity: spaceEntityId,
+      toEntity: avatarData.id,
+      type: ContentIds.AVATAR_PROPERTY,
+    });
+    ops.push(...avatarData.ops, ...avatarRelationOps);
+  }
+
   const { ops: relationOps } = Graph.createRelation({
     fromEntity: spaceEntityId,
     toEntity: accountId,
@@ -57,7 +80,7 @@ export const createAccountSpace = async ({
   const { id } = await Graph.createSpace({
     editorAddress: accountAddress,
     name,
-    network: 'TESTNET',
+    network,
     governanceType: 'PERSONAL',
     ops,
     spaceEntityId,
