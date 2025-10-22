@@ -27,15 +27,13 @@ FROM base AS build
 ENV DATABASE_URL="file:/data/production.sqlite"
 RUN \
   # TODO: This initalizes the database. But we should probably remove this later.
-  # pnpm --filter server prisma migrate reset --force && \
-  # Build the monorepo packages
-  pnpm build && \
+  # pnpm --filter curator-backend prisma migrate reset --force && \
   # Generate the prisma client
-  pnpm --filter server prisma generate && \
+  pnpm --filter curator-backend prisma generate && \
   # Build the server.
-  pnpm --filter server build && \
+  pnpm --filter curator-backend build && \
   # Create an isolated deployment for the server.
-  pnpm --filter server deploy --prod deployment --legacy && \
+  pnpm --filter curator-backend deploy --prod deployment --legacy && \
   # Move the runtime build artifacts into a separate directory.
   mkdir -p deployment/out && mv deployment/dist deployment/node_modules deployment/package.json deployment/out && \
   # Add prisma client in dist

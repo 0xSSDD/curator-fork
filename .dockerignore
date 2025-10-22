@@ -22,10 +22,10 @@
 !patches/*
 
 # Server application.
-!apps/server/package.json
-!apps/server/tsup.config.ts
-!apps/server/src
-!apps/server/prisma
+!apps/curator-backend/package.json
+!apps/curator-backend/tsup.config.ts
+!apps/curator-backend/src
+!apps/curator-backend/prisma
 
 # Workspace package dependencies.
 !packages/design-system
