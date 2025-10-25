@@ -78,3 +78,10 @@ export class PrivyConfigError extends Schema.TaggedError<PrivyConfigError>()('Pr
 export class PrivyTokenError extends Schema.TaggedError<PrivyTokenError>()('PrivyTokenError', {
   message: Schema.String,
 }) {}
+
+export class KnowledgeGraphQueryError extends Schema.TaggedError<KnowledgeGraphQueryError>()(
+  'KnowledgeGraphQueryError',
+  {
+    message: Schema.String,
+  },
+) {}

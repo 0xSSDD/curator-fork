@@ -8,6 +8,7 @@ import * as Layer from 'effect/Layer';
 import { serverPortConfig } from './config/server.ts';
 import { curatorApi } from './http/api.ts';
 import { HandlersLive } from './http/handlers.ts';
+import * as KnowledgeGraphProfileService from './services/knowledge-graph-profile.ts';
 
 // Create scalar openapi browser layer at /docs.
 const DocsLayer = HttpApiScalar.layerHttpLayerRouter({
@@ -18,7 +19,7 @@ const DocsLayer = HttpApiScalar.layerHttpLayerRouter({
 // Create api layer with openapi.json documentation generated at /docs/openapi.json.
 const ApiLayer = HttpLayerRouter.addHttpApi(curatorApi, {
   openapiPath: '/docs/openapi.json',
-}).pipe(Layer.provide(HandlersLive));
+}).pipe(Layer.provide(HandlersLive), Layer.provide(KnowledgeGraphProfileService.layer));
 
 // Merge router layers together and add the cors middleware layer.
 const CorsMiddlewareLayer = HttpLayerRouter.middleware(HttpMiddleware.cors(), { global: true });
