@@ -12,6 +12,7 @@
     "typesync": "hg typesync --open"
   },
   "dependencies": {
+    "@geo/curator-utils": "workspace:*",
     "@geo/design-system": "workspace:*",
     "@graphprotocol/grc-20": "^0.25.5",
     "@graphprotocol/hypergraph": "0.8.0",
@@ -20,7 +21,7 @@
     "@tailwindcss/vite": "^4.1.12",
     "@tanstack/react-query": "^5.85.5",
     "@tanstack/react-router": "^1.131.27",
-    "effect": "^3.17.13",
+    "effect": "^3.18.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.12",

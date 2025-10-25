@@ -3,21 +3,21 @@ import * as HttpApiScalar from '@effect/platform/HttpApiScalar';
 import * as HttpLayerRouter from '@effect/platform/HttpLayerRouter';
 import * as HttpMiddleware from '@effect/platform/HttpMiddleware';
 import * as NodeHttpServer from '@effect/platform-node/NodeHttpServer';
+import { Api } from '@geo/curator-utils';
 import * as Effect from 'effect/Effect';
 import * as Layer from 'effect/Layer';
 import { serverPortConfig } from './config/server.ts';
-import { curatorApi } from './http/api.ts';
 import { HandlersLive } from './http/handlers.ts';
 import * as KnowledgeGraphProfileService from './services/knowledge-graph-profile.ts';
 
 // Create scalar openapi browser layer at /docs.
 const DocsLayer = HttpApiScalar.layerHttpLayerRouter({
-  api: curatorApi,
+  api: Api.curatorApi,
   path: '/docs',
 });
 
 // Create api layer with openapi.json documentation generated at /docs/openapi.json.
-const ApiLayer = HttpLayerRouter.addHttpApi(curatorApi, {
+const ApiLayer = HttpLayerRouter.addHttpApi(Api.curatorApi, {
   openapiPath: '/docs/openapi.json',
 }).pipe(Layer.provide(HandlersLive), Layer.provide(KnowledgeGraphProfileService.layer));
 

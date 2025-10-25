@@ -3,5 +3,6 @@
   "include": [],
   "references": [
     { "path": "packages/design-system/tsconfig.build.json" }
+    { "path": "packages/curator-utils/tsconfig.build.json" }
   ]
 }

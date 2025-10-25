@@ -3,6 +3,7 @@
   "include": [],
   "references": [
     { "path": "packages/design-system" },
+    { "path": "packages/curator-utils" },
     { "path": "apps/curator-backend" },
     { "path": "apps/curator-frontend" }
   ]

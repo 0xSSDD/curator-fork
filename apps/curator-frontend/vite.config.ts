@@ -17,6 +17,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@geo/curator-utils': path.resolve(__dirname, '../../packages/curator-utils/src'),
       '@geo/design-system': path.resolve(__dirname, '../../packages/design-system/src'),
     },
   },

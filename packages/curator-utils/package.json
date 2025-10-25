@@ -1,0 +1,42 @@
+{
+  "name": "@geo/curator-utils",
+  "version": "0.0.1",
+  "description": "Geo Curator Utils",
+  "keywords": [
+    "Geo",
+    "Curator",
+    "Utils"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "directory": "publish",
+    "provenance": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/graphprotocol/curator-app.git",
+    "directory": "packages/curator-utils"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": [],
+  "scripts": {
+    "test": "vitest",
+    "build": "echo 'No build required'"
+  },
+  "peerDependencies": {
+    "@effect/platform": "^0.92.1",
+    "@graphprotocol/grc-20": "^0.25.5",
+    "@graphprotocol/hypergraph": "^0.8.1",
+    "effect": "^3.18.4"
+  },
+  "devDependencies": {
+    "@effect/platform": "^0.92.1",
+    "@graphprotocol/grc-20": "^0.25.5",
+    "@graphprotocol/hypergraph": "^0.8.1",
+    "effect": "^3.18.4"
+  }
+}

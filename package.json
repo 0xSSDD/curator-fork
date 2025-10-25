@@ -16,10 +16,10 @@
     "@babel/cli": "^7.28.3",
     "@babel/core": "^7.28.3",
     "@biomejs/biome": "^2.2.0",
-    "@effect/language-service": "^0.40.0",
-    "@effect/vitest": "^0.25.1",
+    "@effect/language-service": "^0.48.0",
+    "@effect/vitest": "^0.26.0",
     "glob": "^11.0.3",
     "typescript": "^5.9.2",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.2"
   }
 }

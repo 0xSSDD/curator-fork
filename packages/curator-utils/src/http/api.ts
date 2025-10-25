@@ -1,7 +1,7 @@
 import { HttpApi, HttpApiEndpoint, HttpApiGroup } from '@effect/platform';
 import { Schema } from 'effect';
-import { Skill } from '../schema.js';
-import * as Errors from './errors.js';
+import { Skill } from '../domain.js';
+import * as Errors from '../errors.js';
 
 export class ProfileSkillsResponse extends Schema.Class<ProfileSkillsResponse>('ProfileSkillsResponse')({
   // TODO: extending `Skill` with `id` should not be necessary. This is a bug in Hypergraph and once fixed the extension should be removed.

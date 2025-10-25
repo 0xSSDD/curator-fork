@@ -10,16 +10,18 @@
     "prebuild": "prisma generate"
   },
   "dependencies": {
-    "@effect/opentelemetry": "^0.56.6",
-    "@effect/platform": "^0.90.10",
-    "@effect/platform-node": "^0.96.1",
+    "@effect/opentelemetry": "^0.58.0",
+    "@effect/platform": "^0.92.1",
+    "@effect/platform-node": "^0.98.4",
+    "@effect/rpc": "^0.71.1",
+    "@geo/curator-utils": "workspace:*",
     "@graphprotocol/grc-20": "^0.25.5",
     "@graphprotocol/hypergraph": "0.8.1",
     "@noble/hashes": "^1.8.0",
     "@prisma/client": "^6.14.0",
     "@privy-io/server-auth": "^1.32.0",
     "cors": "^2.8.5",
-    "effect": "^3.17.13",
+    "effect": "^3.18.4",
     "prisma": "^6.14.0"
   },
   "devDependencies": {
@@ -28,6 +30,6 @@
     "tsup": "^8.4.0",
     "tsx": "^4.20.5",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.2"
   }
 }

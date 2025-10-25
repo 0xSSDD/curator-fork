@@ -38,7 +38,9 @@
     "jsx": "react-jsx",
     "paths": {
       "@geo/design-system": ["./packages/design-system/src/index.js"],
-      "@geo/design-system/*": ["./packages/design-system/src/*.js"]
+      "@geo/design-system/*": ["./packages/design-system/src/*.js"],
+      "@geo/curator-utils": ["./packages/curator-utils/src/index.js"],
+      "@geo/curator-utils/*": ["./packages/curator-utils/src/*.js"]
     },
     "plugins": [{
       "name": "@effect/language-service",

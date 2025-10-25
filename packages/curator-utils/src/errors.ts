@@ -27,14 +27,6 @@ export class AuthorizationError extends Schema.TaggedError<AuthorizationError>()
   accountAddress: Schema.optional(Schema.String),
 }) {}
 
-export class InvalidTokenError extends Schema.TaggedError<InvalidTokenError>()('InvalidTokenError', {
-  tokenType: Schema.Literal('privy', 'session'),
-}) {}
-
-export class TokenExpiredError extends Schema.TaggedError<TokenExpiredError>()('TokenExpiredError', {
-  tokenType: Schema.Literal('session'),
-}) {}
-
 /**
  * Resource-related errors
  */
@@ -57,15 +49,6 @@ export class ResourceAlreadyExistsError extends Schema.TaggedError<ResourceAlrea
 export class ValidationError extends Schema.TaggedError<ValidationError>()('ValidationError', {
   field: Schema.String,
   message: Schema.String,
-}) {}
-
-export class InvalidSignatureError extends Schema.TaggedError<InvalidSignatureError>()('InvalidSignatureError', {
-  context: Schema.String,
-}) {}
-
-export class OwnershipProofError extends Schema.TaggedError<OwnershipProofError>()('OwnershipProofError', {
-  accountAddress: Schema.String,
-  reason: Schema.String,
 }) {}
 
 /**

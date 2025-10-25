@@ -1,9 +1,9 @@
 import { HttpApiBuilder, HttpServer } from '@effect/platform';
 import { describe, it } from '@effect/vitest';
+import type { Domain } from '@geo/curator-utils';
+import { Api } from '@geo/curator-utils';
 import { Effect, Layer } from 'effect';
-import type { Skill } from '../schema.js';
 import * as KnowledgeGraphProfileService from '../services/knowledge-graph-profile.js';
-import * as Api from './api.js';
 import { HandlersLive } from './handlers.js';
 
 describe('HealthGroupLive', () => {
@@ -33,7 +33,7 @@ describe('ProfileGroupLive', () => {
   it.effect('getProfileSkills returns empty array', ({ expect }) =>
     Effect.gen(function* () {
       const mockService = Layer.sync(KnowledgeGraphProfileService.KnowledgeGraphProfileService, () => ({
-        findSkills: (_query: string) => Effect.succeed([{ id: '1', name: 'Skill 1' } as Skill]),
+        findSkills: (_query: string) => Effect.succeed([{ id: '1', name: 'Skill 1' } as Domain.Skill]),
       }));
 
       const apiLive = HttpApiBuilder.api(Api.curatorApi).pipe(Layer.provide(HandlersLive), Layer.provide(mockService));

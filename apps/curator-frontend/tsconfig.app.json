@@ -37,6 +37,8 @@
     "noUncheckedIndexedAccess": false,
     "baseUrl": ".",
     "paths": {
+      "@geo/curator-utils": ["../../packages/curator-utils/src/index.js"],
+      "@geo/curator-utils/*": ["../../packages/curator-utils/src/*.js"],
       "@geo/design-system": ["../../packages/design-system/src/index.js"],
       "@geo/design-system/*": ["../../packages/design-system/src/*.js"],
       "@/*": ["./src/*"]

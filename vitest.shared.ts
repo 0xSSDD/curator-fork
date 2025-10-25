@@ -10,6 +10,7 @@ const config: ViteUserConfig = {
   test: {
     alias: {
       ...alias('design-system'),
+      ...alias('curator-utils'),
     },
   },
 };

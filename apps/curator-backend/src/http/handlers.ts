@@ -1,7 +1,7 @@
 import { HttpApiBuilder } from '@effect/platform';
+import { Api } from '@geo/curator-utils';
 import { Effect, Layer } from 'effect';
 import * as KnowledgeGraphProfileService from '../services/knowledge-graph-profile.js';
-import * as Api from './api.js';
 
 /**
  * Health Group Handlers

@@ -1,15 +1,17 @@
+import { Errors } from '@geo/curator-utils';
 import { PrivyClient, type Wallet } from '@privy-io/server-auth';
 import { Config, Context, Effect, Layer } from 'effect';
-import { AuthenticationError, PrivyConfigError, PrivyTokenError } from '../http/errors.js';
 import * as DatabaseService from './database.js';
 
 export class PrivyAuthService extends Context.Tag('PrivyAuthService')<
   PrivyAuthService,
   {
-    readonly verifyPrivyToken: (idToken: string) => Effect.Effect<string, PrivyTokenError | PrivyConfigError>;
+    readonly verifyPrivyToken: (
+      idToken: string,
+    ) => Effect.Effect<string, Errors.PrivyTokenError | Errors.PrivyConfigError>;
     readonly authenticateRequest: (
       idToken: string | undefined,
-    ) => Effect.Effect<void, AuthenticationError | PrivyConfigError | PrivyTokenError>;
+    ) => Effect.Effect<void, Errors.AuthenticationError | Errors.PrivyConfigError | Errors.PrivyTokenError>;
   }
 >() {}
 
@@ -19,7 +21,7 @@ export const layer = Effect.gen(function* () {
 
   const verifyPrivyToken = Effect.fn('verifyPrivyToken')(function* (idToken: string) {
     if (!privyAppId || !privyAppSecret) {
-      return yield* new PrivyConfigError({ message: 'Missing Privy configuration' });
+      return yield* new Errors.PrivyConfigError({ message: 'Missing Privy configuration' });
     }
 
     const privy = new PrivyClient(privyAppId, privyAppSecret);
@@ -27,13 +29,13 @@ export const layer = Effect.gen(function* () {
     const user = yield* Effect.tryPromise({
       try: () => privy.getUser({ idToken }),
       catch: (error) =>
-        new PrivyTokenError({
+        new Errors.PrivyTokenError({
           message: `Invalid Privy token: ${error}`,
         }),
     });
 
     if (!user) {
-      return yield* new PrivyTokenError({ message: 'Invalid Privy user' });
+      return yield* new Errors.PrivyTokenError({ message: 'Invalid Privy user' });
     }
 
     const wallet = user.linkedAccounts.find(
@@ -41,7 +43,7 @@ export const layer = Effect.gen(function* () {
     ) as Wallet | undefined;
 
     if (!wallet) {
-      return yield* new PrivyTokenError({ message: 'No Privy wallet found' });
+      return yield* new Errors.PrivyTokenError({ message: 'No Privy wallet found' });
     }
 
     return wallet.address;
@@ -49,12 +51,12 @@ export const layer = Effect.gen(function* () {
 
   const authenticateRequest = Effect.fn('authenticateRequest')(function* (idToken: string | undefined) {
     if (!idToken) {
-      return yield* new AuthenticationError({ message: 'No Privy ID token provided' });
+      return yield* new Errors.AuthenticationError({ message: 'No Privy ID token provided' });
     }
 
     const signerAddress = yield* verifyPrivyToken(idToken);
     if (!signerAddress) {
-      return yield* new AuthenticationError({ message: 'Invalid Privy token' });
+      return yield* new Errors.AuthenticationError({ message: 'Invalid Privy token' });
     }
   });
 
