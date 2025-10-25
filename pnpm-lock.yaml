@@ -35,6 +35,9 @@ importers:
 
   apps/curator-backend:
     dependencies:
+      '@effect/cluster':
+        specifier: ^0.50.6
+        version: 0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4)
       '@effect/opentelemetry':
         specifier: ^0.58.0
         version: 0.58.0(@effect/platform@0.92.1(effect@3.18.4))(@opentelemetry/semantic-conventions@1.37.0)(effect@3.18.4)
@@ -43,7 +46,7 @@ importers:
         version: 0.92.1(effect@3.18.4)
       '@effect/platform-node':
         specifier: ^0.98.4
-        version: 0.98.4(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
+        version: 0.98.4(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
       '@effect/rpc':
         specifier: ^0.71.1
         version: 0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4)
@@ -55,7 +58,7 @@ importers:
         version: 0.25.5(bufferutil@4.0.9)(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)
       '@graphprotocol/hypergraph':
         specifier: 0.8.1
-        version: 0.8.1(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(graphql@16.11.0)(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)
+        version: 0.8.1(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(graphql@16.11.0)(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)
       '@noble/hashes':
         specifier: ^1.8.0
         version: 1.8.0
@@ -107,10 +110,10 @@ importers:
         version: 0.25.5(bufferutil@4.0.9)(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)
       '@graphprotocol/hypergraph':
         specifier: 0.8.0
-        version: 0.8.0(@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)
+        version: 0.8.0(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)
       '@graphprotocol/hypergraph-react':
         specifier: 0.8.0
-        version: 0.8.0(2404cfd133f106ceb6ea13cadc5f0c5f)
+        version: 0.8.0(abca30ba174f4efbbb3963bd47c95dc5)
       '@privy-io/react-auth':
         specifier: ^3.3.0
         version: 3.3.0(@types/react@19.1.10)(bufferutil@4.0.9)(encoding@0.1.13)(permissionless@0.2.57(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(viem@2.38.2(bufferutil@4.0.9)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(use-sync-external-store@1.5.0(react@19.1.1))(utf-8-validate@5.0.10)(zod@3.25.76)
@@ -177,7 +180,7 @@ importers:
         version: 0.25.5(bufferutil@4.0.9)(ox@0.8.7(typescript@5.9.2)(zod@4.1.12))(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.12)
       '@graphprotocol/hypergraph':
         specifier: ^0.8.1
-        version: 0.8.1(@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(graphql@16.11.0)(ox@0.8.7(typescript@5.9.2)(zod@4.1.12))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.12)
+        version: 0.8.1(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(graphql@16.11.0)(ox@0.8.7(typescript@5.9.2)(zod@4.1.12))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.12)
       effect:
         specifier: ^3.18.4
         version: 3.18.4
@@ -570,14 +573,14 @@ packages:
       '@effect/printer-ansi': ^0.45.0
       effect: ^3.17.8
 
-  '@effect/cluster@0.37.2':
-    resolution: {integrity: sha512-9U4P/Fk8C6fN/s0e4nvA++prZmELtV7k5RwG2AOw4NgqBZqptiJMutgaT10ltwgdvddRF/77PVjgORyzNTBmbg==}
+  '@effect/cluster@0.50.6':
+    resolution: {integrity: sha512-JZTctj1SjMWZuG8RnkJCd1myAXmpDYEbLPURookJ6jXhpg8ZU29us49YtQa+MCUNmIr80qjeok/I1KVaQmJfrQ==}
     peerDependencies:
-      '@effect/platform': ^0.84.4
-      '@effect/rpc': ^0.61.4
-      '@effect/sql': ^0.37.4
-      '@effect/workflow': ^0.1.2
-      effect: ^3.16.3
+      '@effect/platform': ^0.92.1
+      '@effect/rpc': ^0.71.1
+      '@effect/sql': ^0.46.0
+      '@effect/workflow': ^0.11.5
+      effect: ^3.18.4
 
   '@effect/experimental@0.54.6':
     resolution: {integrity: sha512-UqHMvCQmrZT6kUVoUC0lqyno4Yad+j9hBGCdUjW84zkLwAq08tPqySiZUKRwY+Ae5B2Ab8rISYJH7nQvct9DMQ==}
@@ -5477,7 +5480,7 @@ snapshots:
       toml: 3.0.0
       yaml: 2.8.1
 
-  '@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4)':
+  '@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4)':
     dependencies:
       '@effect/platform': 0.92.1(effect@3.18.4)
       '@effect/rpc': 0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4)
@@ -5505,9 +5508,9 @@ snapshots:
       '@opentelemetry/semantic-conventions': 1.37.0
       effect: 3.18.4
 
-  '@effect/platform-node-shared@0.49.2(@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)':
+  '@effect/platform-node-shared@0.49.2(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)':
     dependencies:
-      '@effect/cluster': 0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4)
+      '@effect/cluster': 0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4)
       '@effect/platform': 0.90.10(effect@3.18.4)
       '@effect/rpc': 0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4)
       '@effect/sql': 0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4)
@@ -5519,8 +5522,9 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@effect/platform-node-shared@0.51.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)':
+  '@effect/platform-node-shared@0.51.6(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)':
     dependencies:
+      '@effect/cluster': 0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4)
       '@effect/platform': 0.92.1(effect@3.18.4)
       '@effect/rpc': 0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4)
       '@parcel/watcher': 2.5.1
@@ -5531,11 +5535,11 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@effect/platform-node@0.96.1(@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)':
+  '@effect/platform-node@0.96.1(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)':
     dependencies:
-      '@effect/cluster': 0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4)
+      '@effect/cluster': 0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4)
       '@effect/platform': 0.90.10(effect@3.18.4)
-      '@effect/platform-node-shared': 0.49.2(@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
+      '@effect/platform-node-shared': 0.49.2(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
       '@effect/rpc': 0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4)
       '@effect/sql': 0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4)
       effect: 3.18.4
@@ -5546,10 +5550,11 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@effect/platform-node@0.98.4(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)':
+  '@effect/platform-node@0.98.4(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)':
     dependencies:
+      '@effect/cluster': 0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4)
       '@effect/platform': 0.92.1(effect@3.18.4)
-      '@effect/platform-node-shared': 0.51.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
+      '@effect/platform-node-shared': 0.51.6(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
       '@effect/rpc': 0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4)
       effect: 3.18.4
       mime: 3.0.0
@@ -5784,13 +5789,13 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@graphprotocol/hypergraph-react@0.8.0(2404cfd133f106ceb6ea13cadc5f0c5f)':
+  '@graphprotocol/hypergraph-react@0.8.0(abca30ba174f4efbbb3963bd47c95dc5)':
     dependencies:
       '@automerge/automerge': 3.1.1
       '@automerge/automerge-repo': 2.2.0
       '@automerge/automerge-repo-react-hooks': 2.2.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@graphprotocol/grc-20': 0.25.5(bufferutil@4.0.9)(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)
-      '@graphprotocol/hypergraph': 0.8.0(@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)
+      '@graphprotocol/hypergraph': 0.8.0(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)
       '@noble/hashes': 1.8.0
       '@tanstack/react-query': 5.85.5(react@19.1.1)
       effect: 3.18.4
@@ -5810,14 +5815,14 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@graphprotocol/hypergraph@0.8.0(@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)':
+  '@graphprotocol/hypergraph@0.8.0(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)':
     dependencies:
       '@automerge/automerge': 3.1.1
       '@automerge/automerge-repo': 2.2.0
       '@effect/cli': 0.69.2(@effect/platform@0.90.10(effect@3.18.4))(@effect/printer-ansi@0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4))(@effect/printer@0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4))(effect@3.18.4)
       '@effect/experimental': 0.54.6(@effect/platform@0.90.10(effect@3.18.4))(effect@3.18.4)
       '@effect/platform': 0.90.10(effect@3.18.4)
-      '@effect/platform-node': 0.96.1(@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
+      '@effect/platform-node': 0.96.1(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
       '@effect/printer': 0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4)
       '@effect/printer-ansi': 0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4)
       '@graphprotocol/grc-20': 0.25.5(bufferutil@4.0.9)(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)
@@ -5852,14 +5857,14 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@graphprotocol/hypergraph@0.8.1(@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(graphql@16.11.0)(ox@0.8.7(typescript@5.9.2)(zod@4.1.12))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.12)':
+  '@graphprotocol/hypergraph@0.8.1(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(graphql@16.11.0)(ox@0.8.7(typescript@5.9.2)(zod@4.1.12))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.12)':
     dependencies:
       '@automerge/automerge': 3.1.1
       '@automerge/automerge-repo': 2.2.0
       '@effect/cli': 0.69.2(@effect/platform@0.90.10(effect@3.18.4))(@effect/printer-ansi@0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4))(@effect/printer@0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4))(effect@3.18.4)
       '@effect/experimental': 0.54.6(@effect/platform@0.90.10(effect@3.18.4))(effect@3.18.4)
       '@effect/platform': 0.90.10(effect@3.18.4)
-      '@effect/platform-node': 0.96.1(@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
+      '@effect/platform-node': 0.96.1(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
       '@effect/printer': 0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4)
       '@effect/printer-ansi': 0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4)
       '@graphprotocol/grc-20': 0.25.5(bufferutil@4.0.9)(ox@0.8.7(typescript@5.9.2)(zod@4.1.12))(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@4.1.12)
@@ -5896,14 +5901,14 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@graphprotocol/hypergraph@0.8.1(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(graphql@16.11.0)(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)':
+  '@graphprotocol/hypergraph@0.8.1(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/typeclass@0.31.10(effect@3.18.4))(bufferutil@4.0.9)(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))(graphql@16.11.0)(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(react@19.1.1)(solid-js@1.9.5)(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)':
     dependencies:
       '@automerge/automerge': 3.1.1
       '@automerge/automerge-repo': 2.2.0
       '@effect/cli': 0.69.2(@effect/platform@0.90.10(effect@3.18.4))(@effect/printer-ansi@0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4))(@effect/printer@0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4))(effect@3.18.4)
       '@effect/experimental': 0.54.6(@effect/platform@0.90.10(effect@3.18.4))(effect@3.18.4)
       '@effect/platform': 0.90.10(effect@3.18.4)
-      '@effect/platform-node': 0.96.1(@effect/cluster@0.37.2(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
+      '@effect/platform-node': 0.96.1(@effect/cluster@0.50.6(@effect/platform@0.92.1(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/workflow@0.1.2(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.90.10(effect@3.18.4))(@effect/rpc@0.71.1(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/sql@0.44.0(@effect/experimental@0.54.6(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(@effect/platform@0.92.1(effect@3.18.4))(effect@3.18.4))(bufferutil@4.0.9)(effect@3.18.4)(utf-8-validate@5.0.10)
       '@effect/printer': 0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4)
       '@effect/printer-ansi': 0.45.0(@effect/typeclass@0.31.10(effect@3.18.4))(effect@3.18.4)
       '@graphprotocol/grc-20': 0.25.5(bufferutil@4.0.9)(ox@0.8.7(typescript@5.9.2)(zod@3.25.76))(typescript@5.9.2)(utf-8-validate@5.0.10)(zod@3.25.76)

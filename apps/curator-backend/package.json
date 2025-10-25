@@ -10,6 +10,7 @@
     "prebuild": "prisma generate"
   },
   "dependencies": {
+    "@effect/cluster": "^0.50.6",
     "@effect/opentelemetry": "^0.58.0",
     "@effect/platform": "^0.92.1",
     "@effect/platform-node": "^0.98.4",
