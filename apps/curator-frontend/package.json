@@ -12,6 +12,7 @@
     "typesync": "hg typesync --open"
   },
   "dependencies": {
+    "@effect/platform": "^0.92.1",
     "@geo/curator-utils": "workspace:*",
     "@geo/design-system": "workspace:*",
     "@graphprotocol/grc-20": "^0.25.5",

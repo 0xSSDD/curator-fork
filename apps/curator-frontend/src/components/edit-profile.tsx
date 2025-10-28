@@ -2,6 +2,7 @@ import { AvatarUpload } from '@geo/design-system';
 import type { Id, Op } from '@graphprotocol/grc-20';
 import { useState } from 'react';
 import { network } from '@/config';
+import { SkillsField } from './skills-field';
 
 export const EditProfile = ({
   onSubmit,
@@ -44,6 +45,7 @@ export const EditProfile = ({
         <input type="text" name="xUrl" placeholder="X URL" />
         <input type="text" name="linkedinUrl" placeholder="LinkedIn URL" />
         <input type="text" name="githubUrl" placeholder="GitHub URL" />
+        <SkillsField />
 
         <button type="submit">Save</button>
       </form>
