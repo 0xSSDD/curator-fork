@@ -32,11 +32,15 @@ export const AvatarUpload = ({ onUpload, network }: AvatarUploadProps) => {
   };
 
   return (
-    <div className="flex items-center justify-center gap-1.5 pb-4">
-      <label htmlFor={avatarInputId} className="inline-block cursor-pointer text-center hover:underline">
+    <div className="flex items-center justify-start gap-1.5 pb-4">
+      <label htmlFor={avatarInputId} className="hidden">
         Upload Avatar
       </label>
-      {avatarCid && <IpfsImage cid={avatarCid} className="w-10 h-10 rounded-md" />}
+      {avatarCid ? (
+        <IpfsImage cid={avatarCid} className="w-20 h-20 rounded-md" />
+      ) : (
+        <img src="/images/avatar-upload.svg" alt="Avatar placeholder" className="w-20 h-20 rounded-md" />
+      )}
       <input
         accept="image/png, image/jpeg"
         id={avatarInputId}
