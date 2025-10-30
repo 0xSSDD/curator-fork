@@ -24,8 +24,8 @@ export const EditProfile = ({
   const [avatarData, setAvatarData] = useState<{ id: Id; ops: Op[]; cid: string } | undefined>(undefined);
 
   return (
-    <div>
-      <p>Fill out your profile</p>
+    <article>
+      <h3 className="pb-10">Fill out your profile</h3>
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -49,6 +49,6 @@ export const EditProfile = ({
 
         <button type="submit">Save</button>
       </form>
-    </div>
+    </article>
   );
 };
