@@ -12,6 +12,7 @@
     "typesync": "hg typesync --open"
   },
   "dependencies": {
+    "@base-ui-components/react": "1.0.0-beta.4",
     "@effect/platform": "^0.92.1",
     "@geo/curator-utils": "workspace:*",
     "@geo/design-system": "workspace:*",
@@ -22,10 +23,11 @@
     "@tailwindcss/vite": "^4.1.12",
     "@tanstack/react-query": "^5.85.5",
     "@tanstack/react-router": "^1.131.27",
+    "clsx": "^2.1.1",
     "effect": "^3.18.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.12",
+    "tailwind-merge": "^3.3.1",
     "viem": "^2.38.2",
     "vite": "^7.1.3"
   },
@@ -36,7 +38,9 @@
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.1",
     "globals": "^16.3.0",
+    "tailwindcss": "^4.1.16",
     "tw-animate-css": "^1.3.7",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "vite-plugin-svgr": "^4.5.0"
   }
 }

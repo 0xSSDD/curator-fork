@@ -1,0 +1,130 @@
+.sidebar {
+  background-color: var(--color-accent-blue-grey-bg);
+  /* or var(--color-background) */
+  color: var(--color-primary-dark);
+}
+
+/* Base styles */
+.sidebar-container {
+  background-color: var(--color-background);
+  /* was bg-sidebar, replaced with your background */
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+
+/* When data-variant="floating" is present */
+.sidebar-container[data-variant="floating"],
+.sidebar-container.group-variant-floating {
+  border-right: 1px solid var(--color-grey-light);
+  /* border-sidebar-border replaced */
+  border-radius: 0rem;
+  /* rounded-lg = 8px */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  /* shadow-sm approximate */
+}
+
+/* Base styles */
+.sidebar-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  width: 100%;
+  /* 12px */
+  overflow: hidden;
+  border-radius: 0.375rem;
+  /* 6px */
+  padding: 1rem;
+  /* 16px */
+  text-align: left;
+  outline: none;
+  transition: width 0.2s, height 0.2s, padding 0.2s;
+  cursor: pointer;
+
+  /* Colors */
+  /* background-color: var(--color-background); */
+  color: var(--color-primary-dark);
+  fill: var(--color-primary-dark);
+  border: none;
+  user-select: none;
+}
+
+/* Hover and focus */
+.sidebar-menu-button:hover,
+.sidebar-menu-button.variant-default:hover,
+.sidebar-menu-button.variant-outline:hover {
+  background-color: var(--color-accent-purple-bg);
+  color: var(--color-primary-accent-purple);
+}
+
+.sidebar-menu-button:focus-visible {
+  outline: 2px solid var(--color-primary-accent-purple);
+  outline-offset: 2px;
+}
+
+/* Active (clicked or aria-pressed or data-active) */
+.sidebar-menu-button[data-active="true"],
+.sidebar-menu-button:active {
+  background-color: var(--color-accent-purple-bg);
+  color: var(--color-primary-accent-purple);
+  fill: var(--color-primary-accent-purple);
+}
+
+/* Disabled */
+.sidebar-menu-button:disabled,
+.sidebar-menu-button[aria-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Variant: outline */
+.sidebar-menu-button.variant-outline {
+  background-color: var(--color-background);
+  box-shadow: 0 0 0 1px var(--color-grey-light);
+  color: var(--color-primary-dark);
+}
+
+.sidebar-menu-button.variant-outline:hover {
+  background-color: var(--color-accent-purple-bg);
+  color: var(--color-primary-accent-purple);
+  box-shadow: 0 0 0 1px var(--color-primary-accent-purple);
+}
+
+
+.sidebar-menu-button.size-default {
+  height: 2rem;
+}
+
+/* Icons and truncation (similar to your last-child and svg size) */
+.sidebar-menu-button>span:last-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+.sidebar-menu-button>svg {
+  width: 1rem;
+  /* default 16px */
+  height: 1rem;
+  flex-shrink: 0;
+  transition: width 0.2s, height 0.2s, padding 0.2s;
+}
+
+.sidebar-menu-button.collapsed {
+  justify-content: center;
+  /* center icon horizontally */
+  padding-left: 0.5rem;
+  /* optional: adjust padding for smaller size */
+  padding-right: 0.5rem;
+}
+
+.sidebar-menu-button.collapsed>span {
+  display: none;
+  /* hide text span when collapsed (optional, but you already conditionally render it) */
+}

@@ -1,59 +1,79 @@
 /* Main title - 46/44 */
 h1 {
     font-family: 'Calibre', sans-serif;
-    font-size: 2.875rem; /* 46px */
-    line-height: 2.75rem; /* 44px */
+    font-size: 2.875rem;
+    /* 46px */
+    line-height: 2.75rem;
+    /* 44px */
     font-weight: 600;
 }
 
 /* Large title - 36/36 */
 h2 {
     font-family: 'Calibre', sans-serif;
-    font-size: 2.25rem; /* 36px */
-    line-height: 2.25rem; /* 36px */
+    font-size: 2.25rem;
+    /* 36px */
+    line-height: 2.25rem;
+    /* 36px */
     font-weight: 600;
 }
 
 /* Medium title - 28/28 */
 h3 {
     font-family: 'Calibre', sans-serif;
-    font-size: 1.75rem; /* 28px */
-    line-height: 1.75rem; /* 28px */
+    font-size: 1.75rem;
+    /* 28px */
+    line-height: 1.75rem;
+    /* 28px */
     font-weight: 600;
 }
 
 /* Small title - 19/21 */
 h4 {
     font-family: 'Calibre', sans-serif;
-    font-size: 1.1875rem; /* 19px */
-    line-height: 1.3125rem; /* 21px */
+    font-size: 1.1875rem;
+    /* 19px */
+    line-height: 1.3125rem;
+    /* 21px */
     font-weight: 600;
 }
 
 /* Tiny title - 16/20 */
 h5 {
     font-family: 'Calibre', sans-serif;
-    font-size: 1rem; /* 16px */
-    line-height: 1.25rem; /* 20px */
+    font-size: 1rem;
+    /* 16px */
+    line-height: 1.25rem;
+    /* 20px */
     font-weight: normal;
 }
 
 /* Body copy - 18/21 */
 p {
     font-family: 'Calibre', sans-serif;
-    font-size: 1.125rem; /* 18px */
-    line-height: 1.3125rem; /* 21px */
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1.3125rem;
+    /* 21px */
 }
 
 /* Body copy bold - 17/20 */
-strong, b {
+strong,
+b {
     font-weight: 600;
 }
 
 /* Button - 16/15 */
 button {
     font-family: 'Calibre', sans-serif;
-    font-size: 1rem; /* 16px */
-    line-height: 0.9375rem; /* 15px */
+    font-size: 1rem;
+    /* 16px */
+    line-height: 0.9375rem;
+    /* 15px */
 }
 
+.nav-link {
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: -0.5px;
+}

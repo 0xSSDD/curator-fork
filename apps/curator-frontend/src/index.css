@@ -1,41 +1,51 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-@import './styles/containers.css';
-@import './styles/typography.css';
+/* index.css */
 
+/* 1️⃣ Load Tailwind (v4 handles all layers internally) */
+@import "tailwindcss";
+
+/* 2️⃣ Load plugins like tw-animate */
+@import "tw-animate-css";
+
+/* 3️⃣ Optional: import your own design system */
+@source "../../../packages/design-system/src";
+
+/* 4️⃣ Custom global styles */
+@import "./styles/containers.css";
+@import "./styles/typography.css";
+@import "./styles/sidebar.css";
+
+/* 5️⃣ Font definitions */
 @font-face {
-  font-family: 'Calibre';
+  font-family: "Calibre";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/calibre-regular.woff2') format('woff2');
+  src: url("/fonts/calibre-regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Calibre';
+  font-family: "Calibre";
   font-style: normal;
   font-weight: 500;
-  src: url('/fonts/calibre-medium.woff2') format('woff2');
+  src: url("/fonts/calibre-medium.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Calibre';
+  font-family: "Calibre";
   font-style: normal;
   font-weight: 600;
-  src: url('/fonts/calibre-semibold.woff2') format('woff2');
+  src: url("/fonts/calibre-semibold.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Calibre';
+  font-family: "Calibre";
   font-style: normal;
   font-weight: 700;
-  src: url('/fonts/calibre-bold.woff2') format('woff2');
+  src: url("/fonts/calibre-bold.woff2") format("woff2");
 }
 
-@source '../../../packages/design-system/src';
-
-/* @custom-variant dark (&:is(.dark *)); */
-
+/* 6️⃣ Theme tokens (Tailwind 4 @theme inline is perfect here) */
 @theme inline {
+  /* CTA */
   --color-cta: #002fd9;
   --color-cta-hover: #1446ff;
   --color-cta-active: #002fd9;
@@ -50,16 +60,33 @@
   --color-grey-medium: #c4c4c4;
   --color-grey-light-text: #606060;
   --color-dark-text: #2a2b2e;
+
+  /* Primary */
+  --color-primary-text-dark: #2a2b2e;
+  --color-primary-accent-purple: #6833ff;
+  --color-primary-accent-pink: #fe31c5;
+
+  /* Secondary */
+  --color-secondary-text-light: #606060;
+  --color-secondary-medium-grey: #c4c4c4;
+  --color-secondary-light-grey: #dbdbdb;
+  --color-secondary-divider: #eeeeee;
+  --color-secondary-white: #ffffff;
+
+  /* Accent */
+  --color-accent-error: #ff2655;
+  --color-accent-success: #06f68e;
+  --color-accent-purple-bg: #e8e0ff;
+  --color-accent-purple-bg-light: #f3efff;
+  --color-accent-pink-bg: #ffe0f6;
+  --color-accent-blue-grey-bg: #edeef3;
 }
 
-/* .dark {
-  --background: oklch(0.129 0.042 264.695);
-} */
-
+/* 7️⃣ Base layer (Tailwind merges with global styles automatically) */
 @layer base {
   body {
     @apply bg-background text-primary-dark min-h-screen overflow-x-clip;
-    font-family: 'Calibre', sans-serif;
+    font-family: "Calibre", sans-serif;
     text-rendering: optimizeLegibility;
     font-size: 16px;
   }

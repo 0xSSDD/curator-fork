@@ -15,7 +15,7 @@ function Index() {
   }
 
   if (geoAccount.status === 'signed-out') {
-    return <div>Sign in to get started</div>;
+    return <div className="text-primary-pink bg-accent-purple-bg p-4 ">Sign in to get started</div>;
   }
 
   if (geoAccount.status === 'signed-in') {
