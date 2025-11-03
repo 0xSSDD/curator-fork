@@ -25,7 +25,7 @@
   "sideEffects": [],
   "scripts": {
     "test": "vitest",
-    "build": "echo 'No build required'"
+    "build": "tsc -b --force tsconfig.build.json && babel dist --plugins annotate-pure-calls --out-dir dist --source-maps && node ../../scripts/package.mjs"
   },
   "peerDependencies": {
     "@effect/platform": "^0.92.1",
