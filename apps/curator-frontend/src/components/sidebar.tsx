@@ -223,7 +223,6 @@ export function Sidebar({
       </div>
     );
   }
-
   if (isMobile) {
     return (
       <Dialog.Root open={openMobile} onOpenChange={setOpenMobile}>
@@ -237,7 +236,7 @@ export function Sidebar({
           <Dialog.Popup
             data-sidebar="sidebar"
             data-mobile="true"
-            className={`fixed top-0 left-0 h-full sidebar  bg-sidebar text-sidebar-foreground p-0 w-[var(--sidebar-width)] [&>button]:hidden z-50 shadow-lg transform transition-transform duration-700 ease-in-out ${
+            className={`Popup fixed top-0 left-0 h-full sidebar  bg-sidebar text-sidebar-foreground p-0 w-[var(--sidebar-width)] [&>button]:hidden z-50 shadow-lg transform transition-transform duration-700 ease-in-out ${
               openMobile ? 'translate-x-0' : '-translate-x-full'
             }`}
             style={{ '--sidebar-width': SIDEBAR_WIDTH_MOBILE } as React.CSSProperties}
@@ -248,10 +247,9 @@ export function Sidebar({
       </Dialog.Root>
     );
   }
-
   return (
     <div
-      className="group peer hidden md:block"
+      className="group peer hidden md:block "
       data-state={state}
       data-collapsible={state === 'collapsed' ? collapsible : ''}
       data-variant={variant}
