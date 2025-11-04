@@ -10,7 +10,7 @@ export const Button = ({
   const chosenVariant = variant || 'primary';
 
   const base =
-    'tracking-[-0.35px] pb-[1px] rounded-md text-m font-regular leading-[13px] h-[24px] disabled:cursor-not-allowed disabled:bg-disabled focus-visible:ring-2 focus:outline-none';
+    'button-text tracking-[-0.35px] pb-[1px] rounded-md text-m font-regular leading-[13px] h-[24px] disabled:cursor-not-allowed disabled:bg-disabled focus-visible:ring-2 focus:outline-none';
   const variants = {
     primary:
       'bg-cta text-white px-1.5 hover:bg-cta-hover active:bg-cta-active focus-visible:ring-cta-outline disabled:text-grey-light-text',

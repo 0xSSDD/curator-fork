@@ -1,6 +1,8 @@
 import { useGeoAccount } from '@geo/design-system';
 import { createFileRoute } from '@tanstack/react-router';
 import { EditProfile } from '@/components/edit-profile';
+import SectionTitle from '@/components/onboarding-dashboard';
+import OnBoardingDashboard from '@/components/onboarding-dashboard';
 import { network } from '@/config';
 
 export const Route = createFileRoute('/')({

@@ -45,6 +45,7 @@
 
 /* 6️⃣ Theme tokens (Tailwind 4 @theme inline is perfect here) */
 @theme inline {
+  --font-display: 'Calibre', sans-serif;
   /* CTA */
   --color-cta: #002fd9;
   --color-cta-hover: #1446ff;
@@ -80,6 +81,99 @@
   --color-accent-purple-bg-light: #f3efff;
   --color-accent-pink-bg: #ffe0f6;
   --color-accent-blue-grey-bg: #edeef3;
+
+  --font-calibre: "Calibre", sans-serif;
+
+  /* -----------------------------------
+     DESKTOP TYPOGRAPHY (default)
+  ----------------------------------- */
+  --text-main-title: 2.875rem;
+  /* 46px */
+  --leading-main-title: 2.75rem;
+  /* 44px */
+  --weight-main-title: 600;
+  --tracking-main-title: -0.0625rem;
+  /* -1px */
+
+  --text-large-title: 2.25rem;
+  /* 36px */
+  --leading-large-title: 2.25rem;
+  /* 36px */
+  --weight-large-title: 600;
+  --tracking-large-title: -0.0625rem;
+  /* -1px */
+
+  --text-medium-title: 1.75rem;
+  /* 28px */
+  --leading-medium-title: 1.75rem;
+  /* 28px */
+  --weight-medium-title: 600;
+  --tracking-medium-title: -0.0625rem;
+  /* -1px */
+
+  --text-small-title: 1.1875rem;
+  /* 19px */
+  --leading-small-title: 1.3125rem;
+  /* 21px */
+  --weight-small-title: 600;
+  --tracking-small-title: -0.03125rem;
+  /* -0.5px */
+
+  --text-tiny-title: 1rem;
+  /* 16px */
+  --leading-tiny-title: 1.25rem;
+  /* 20px */
+  --weight-tiny-title: 600;
+  --tracking-tiny-title: -0.021875rem;
+  /* -0.35px */
+
+  --text-meta-title: 0.6875rem;
+  /* 11px */
+  --leading-meta-title: 0.8125rem;
+  /* 13px */
+  --weight-meta-title: 500;
+  --tracking-meta-title: -0.015625rem;
+  /* -0.25px */
+
+  --text-body-copy: 1.0625rem;
+  /* 17px */
+  --leading-body-copy: 1.25rem;
+  /* 20px */
+  --weight-body-copy: 400;
+  --tracking-body-copy: -0.021875rem;
+  /* -0.35px */
+
+  --text-tag-text: 1rem;
+  /* 16px */
+  --leading-tag-text: 0.8125rem;
+  /* 13px */
+  --weight-tag-text: 400;
+  --tracking-tag-text: -0.021875rem;
+  /* -0.35px */
+
+  --text-tab-copy: 1.0625rem;
+  /* 17px */
+  --leading-tab-copy: 1.375rem;
+  /* 22px */
+  --weight-tab-copy: 600;
+  --tracking-tab-copy: -0.03125rem;
+  /* -0.5px */
+
+  --text-nav-link: 1rem;
+  /* 16px */
+  --leading-nav-link: 0.0625rem;
+  /* 1px */
+  --weight-nav-link: 500;
+  --tracking-nav-link: -0.03125rem;
+  /* -0.5px */
+
+  --text-large-button: 1rem;
+  /* 16px */
+  --leading-large-button: 0.9375rem;
+  /* 15px */
+  --weight-large-button: 500;
+  --tracking-large-button: -0.03125rem;
+  /* -0.5px */
 }
 
 /* 7️⃣ Base layer (Tailwind merges with global styles automatically) */
@@ -89,5 +183,40 @@
     font-family: "Calibre", sans-serif;
     text-rendering: optimizeLegibility;
     font-size: 16px;
+  }
+}
+
+/* Media queries come outside */
+@media (max-width: 768px) {
+  :root {
+    --text-small-title: 1.375rem;
+    /* 22px */
+    --leading-small-title: 1.3125rem;
+    /* 21px */
+
+    --text-tiny-title: 1.125rem;
+    /* 18px */
+    --leading-tiny-title: 0.875rem;
+    /* 14px */
+
+    --text-meta-title: 0.75rem;
+    /* 12px */
+    --leading-meta-title: 0.8125rem;
+    /* 13px */
+
+    --text-body-copy: 1.1875rem;
+    /* 19px */
+    --leading-body-copy: 1.375rem;
+    /* 22px */
+
+    --text-tag-text: 1.125rem;
+    /* 18px */
+    --leading-tag-text: 0.875rem;
+    /* 14px */
+
+    --text-large-button: 1.25rem;
+    /* 20px */
+    --leading-large-button: 0.9375rem;
+    /* 15px */
   }
 }
