@@ -187,6 +187,13 @@
         letter-spacing: var(--tracking-body-copy);
     }
 
+    .tag-text {
+        font-size: var(--text-tag-text);
+        line-height: var(--leading-tag-text);
+        font-weight: var(--weight-tag-text);
+        letter-spacing: var(--tracking-tag-text);
+    }
+
     .button-text {
         font-family: var(--font-calibre);
         font-size: var(--text-button);
