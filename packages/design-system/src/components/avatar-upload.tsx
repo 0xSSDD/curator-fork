@@ -33,7 +33,7 @@ export const AvatarUpload = ({ onUpload, network }: AvatarUploadProps) => {
 
   return (
     <div className="flex items-center justify-start gap-1.5 pb-4">
-      <label htmlFor={avatarInputId} aria-label="Upload Avatar">
+      <label htmlFor={avatarInputId} aria-label="Upload Avatar" className="cursor-pointer">
         {avatarCid ? (
           <IpfsImage cid={avatarCid} className="w-20 h-20 rounded-md" />
         ) : (
