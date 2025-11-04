@@ -11,6 +11,7 @@ onlyBuiltDependencies:
   - bufferutil
   - cbor-extract
   - esbuild
+  - keccak
   - msgpackr-extract
   - prisma
   - utf-8-validate

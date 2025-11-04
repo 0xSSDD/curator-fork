@@ -28,6 +28,7 @@ ENV DATABASE_URL="file:/data/production.sqlite"
 RUN \
   # TODO: This initalizes the database. But we should probably remove this later.
   # pnpm --filter curator-backend prisma migrate reset --force && \
+  pnpm build && \
   # Generate the prisma client
   pnpm --filter curator-backend prisma generate && \
   # Build the server.

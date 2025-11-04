@@ -15,6 +15,7 @@
     "@effect/platform": "^0.92.1",
     "@effect/platform-node": "^0.98.4",
     "@effect/rpc": "^0.71.1",
+    "@effect/sql": "^0.46.0",
     "@geo/curator-utils": "workspace:*",
     "@graphprotocol/grc-20": "^0.25.5",
     "@graphprotocol/hypergraph": "0.8.1",

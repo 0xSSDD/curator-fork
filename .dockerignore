@@ -20,6 +20,7 @@
 !pnpm-workspace.yaml
 !pnpm-lock.yaml
 !patches/*
+!scripts/*
 
 # Server application.
 !apps/curator-backend/package.json

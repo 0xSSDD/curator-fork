@@ -22,5 +22,6 @@ export default defineConfig({
       '@geo/curator-utils': path.resolve(__dirname, '../../packages/curator-utils/src'),
       '@geo/design-system': path.resolve(__dirname, '../../packages/design-system/src'),
     },
+    dedupe: ['react', 'react-dom', '@privy-io/react-auth'],
   },
 });
