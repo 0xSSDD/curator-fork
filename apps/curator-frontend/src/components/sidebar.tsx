@@ -349,12 +349,12 @@ export function AppSidebar() {
                         {
                           collapsed: !(isExpanded || isMobile),
                         },
-                        'text-nav-link',
+                        'nav-link',
                       )}
                       href={item.url}
                     >
                       {item.icon}
-                      {(isExpanded || isMobile) && <span className="text-nav-link">{item.title}</span>}
+                      {(isExpanded || isMobile) && <span className="nav-link">{item.title}</span>}
                     </a>
                   </SidebarMenuItem>
                 );
