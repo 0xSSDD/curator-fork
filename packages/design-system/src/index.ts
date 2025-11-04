@@ -1,5 +1,9 @@
 export * from './components/avatar-upload.js';
 export * from './components/button.js';
+export * from './components/divider.js';
+export * from './components/field.js';
+export * from './components/input.js';
 export * from './components/ipfs-image.js';
+export * from './components/textarea.js';
 export * from './hooks/use-geo-account.js';
 export type * from './types.js';

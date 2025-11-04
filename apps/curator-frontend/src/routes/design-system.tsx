@@ -1,4 +1,4 @@
-import { Button } from '@geo/design-system';
+import { Button, Divider, Field, Input, Textarea } from '@geo/design-system';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/design-system')({
@@ -98,15 +98,38 @@ function RouteComponent() {
       </section>
 
       <section>
+        <h2 className="pb-2">Field</h2>
+        <Field.Root>
+          <Field.Label>LinkedIn</Field.Label>
+          <Input placeholder="URL …" />
+        </Field.Root>
+      </section>
+
+      <section>
+        <h2 className="pb-2">Input</h2>
+        <Input placeholder="URL …" />
+      </section>
+
+      <section>
+        <h2 className="pb-2">Textarea</h2>
+        <Textarea placeholder="Describe what you do…" />
+      </section>
+
+      <section>
+        <h2 className="pb-2">Divider</h2>
+        <Divider />
+      </section>
+
+      <section>
         <h2 className="pb-2">Colors</h2>
         <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
           {colors.map((color) => (
             <div key={color.var}>
               <div className={`${color.class} h-12 rounded border border-grey-light`} />
-              <p className="!text-xs">
+              <p className="text-xs!">
                 <strong>{color.name}</strong>
               </p>
-              <p className="!text-xs">
+              <p className="text-xs!">
                 <code>{color.class}</code>
               </p>
             </div>

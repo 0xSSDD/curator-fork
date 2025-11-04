@@ -28,10 +28,10 @@
     "build": "tsc -b --force tsconfig.build.json && babel dist --plugins annotate-pure-calls --out-dir dist --source-maps && node ../../scripts/package.mjs"
   },
   "peerDependencies": {
+    "@graphprotocol/grc-20": "^0.25.5",
     "@privy-io/react-auth": "^3.3.0",
     "@tanstack/react-query": "^5.85.5",
-    "react": "^18.0.0 || ^19.0.0",
-    "@graphprotocol/grc-20": "^0.25.5"
+    "react": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
     "@graphprotocol/grc-20": "^0.25.5",
@@ -44,9 +44,12 @@
     "react": "^19.1.1"
   },
   "dependencies": {
+    "@base-ui-components/react": "1.0.0-beta.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "graphql-request": "^7.3.0",
+    "react-textarea-autosize": "^8.5.9",
+    "tailwind-merge": "^3.3.1",
     "wagmi": "^2.18.1"
   }
 }
