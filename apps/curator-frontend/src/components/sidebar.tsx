@@ -2,10 +2,10 @@
 
 import { Dialog } from '@base-ui-components/react/dialog';
 import { Tooltip } from '@base-ui-components/react/tooltip';
+import { cn } from '@geo/design-system/utils/cn';
 import { useMatchRoute } from '@tanstack/react-router';
 import * as React from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { cn } from '@/lib/utils';
 import BountyIcon from '../icons/bounty.svg?react';
 import BurgerMenuIcon from '../icons/burger_menu.svg?react';
 import CloseSidebarIcon from '../icons/close_sidebar.svg?react';
