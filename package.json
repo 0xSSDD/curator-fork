@@ -6,6 +6,7 @@
     "dev": "pnpm --recursive --parallel --filter \"./apps/*\" run dev",
     "build": "pnpm --recursive --filter \"./packages/*\" run build && pnpm --recursive --parallel --filter \"./apps/*\" run build",
     "test": "vitest",
+    "test:be": "vitest --project=curator-backend",
     "lint": "biome check",
     "lint:fix": "biome check --write --unsafe",
     "check": "tsc -b tsconfig.json",

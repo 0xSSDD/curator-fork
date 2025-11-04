@@ -7,6 +7,7 @@ export class KnowledgeGraphProfileService extends Context.Tag('KnowledgeGraphPro
   KnowledgeGraphProfileService,
   {
     readonly findSkills: (query: string) => Effect.Effect<Domain.Skill[], Errors.KnowledgeGraphQueryError>;
+    readonly findCompanies: (query: string) => Effect.Effect<Domain.Company[], Errors.KnowledgeGraphQueryError>;
   }
 >() {}
 
@@ -28,7 +29,25 @@ export const layer = Effect.gen(function* () {
     return response.data;
   });
 
+  const findCompanies = Effect.fn('findCompanies')(function* (query: string) {
+    const response = yield* Effect.tryPromise({
+      try: () =>
+        Entity.searchManyPublic(Domain.Company, {
+          query,
+          space: CRYPTO_SPACE_ID,
+        }),
+      catch: (cause) => {
+        if (cause instanceof Error) {
+          return new Errors.KnowledgeGraphQueryError({ message: cause.message });
+        }
+        return new Errors.KnowledgeGraphQueryError({ message: 'Failed to query knowledge graph' });
+      },
+    });
+    return response.data;
+  });
+
   return {
     findSkills,
+    findCompanies,
   } as const;
 }).pipe(Layer.effect(KnowledgeGraphProfileService));
