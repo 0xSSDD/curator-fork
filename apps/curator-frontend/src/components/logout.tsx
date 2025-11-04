@@ -11,7 +11,7 @@ export function Logout() {
 
   return (
     <Button type="button" onClick={handleLogout}>
-      Logout
+      Sign out
     </Button>
   );
 }
