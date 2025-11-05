@@ -2,7 +2,7 @@
 
 import { Dialog } from '@base-ui-components/react/dialog';
 import { Tooltip } from '@base-ui-components/react/tooltip';
-import { cn } from '@geo/design-system/utils/cn';
+import { cn } from '@geo/design-system';
 import { useMatchRoute } from '@tanstack/react-router';
 import * as React from 'react';
 import { menuItems } from '@/data/menuItems';
