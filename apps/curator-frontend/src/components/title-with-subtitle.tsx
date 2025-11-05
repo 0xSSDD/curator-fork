@@ -18,9 +18,11 @@ export default function TitleWithSubtitle({
       {children && <div className="w-full">{children}</div>}
 
       {/* Subtitle */}
-      <p className="w-full flex items-center body-copy text-dark-text" style={{ flexGrow: 0 }}>
-        {subtitle}
-      </p>
+      {subtitle && (
+        <p className="w-full flex items-center body-copy text-dark-text" style={{ flexGrow: 0 }}>
+          {subtitle}
+        </p>
+      )}
     </div>
   );
 }

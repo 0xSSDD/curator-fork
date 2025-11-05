@@ -63,10 +63,10 @@ export function JoinSpaceCard() {
                  w-full max-w-[38rem] 
                  p-0"
         >
-          <TagCard />
-          <TagCard image="/images/world_affairs_icon.png" tag="World affairs" />
-          <TagCard image="/images/health_icon.png" tag="Health" />
-          <TagCard image="/images/crypto_icon.png" tag="Crypto" />
+          <TagCard image="/images/education_icon.png" tag="Education" action="Join" />
+          <TagCard image="/images/world_affairs_icon.png" tag="World affairs" action="Join" />
+          <TagCard image="/images/health_icon.png" tag="Health" action="Join" />
+          <TagCard image="/images/crypto_icon.png" tag="Crypto" action="Join" />
         </div>
       </div>
     </div>

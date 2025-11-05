@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { CommunicationCalls } from '@/components/communication-calls';
 import { EditProfile } from '@/components/edit-profile';
 import MyBountiesHeader from '@/components/my-bounties-header';
 import OnBoardingDashboard from '@/components/onboarding-dashboard';
@@ -11,6 +12,9 @@ function RouteComponent() {
   return (
     <article className="flex flex-col gap-8">
       <h1>Component test page</h1>
+      <section>
+        <CommunicationCalls />
+      </section>
       <section>
         <OnBoardingDashboard />
       </section>
