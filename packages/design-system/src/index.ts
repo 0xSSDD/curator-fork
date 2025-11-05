@@ -1,4 +1,5 @@
 export * from './components/avatar-upload.js';
+export * from './components/base-select.js';
 export * from './components/button.js';
 export * from './components/divider.js';
 export * from './components/field.js';
