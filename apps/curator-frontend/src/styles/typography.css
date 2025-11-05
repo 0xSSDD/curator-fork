@@ -1,79 +1,202 @@
-/* Main title - 46/44 */
-h1 {
-    font-family: 'Calibre', sans-serif;
-    font-size: 2.875rem;
+@import "tailwindcss";
+
+@theme {
+    --font-calibre: "Calibre", sans-serif;
+
+    /* Desktop Typography Tokens */
+    --text-main-title: 2.875rem;
     /* 46px */
-    line-height: 2.75rem;
+    --leading-main-title: 2.75rem;
     /* 44px */
-    font-weight: 600;
-}
+    --weight-main-title: 600;
+    --tracking-main-title: -0.0625rem;
+    /* -1px */
 
-/* Large title - 36/36 */
-h2 {
-    font-family: 'Calibre', sans-serif;
-    font-size: 2.25rem;
+    --text-large-title: 2.25rem;
     /* 36px */
-    line-height: 2.25rem;
+    --leading-large-title: 2.25rem;
     /* 36px */
-    font-weight: 600;
-}
+    --weight-large-title: 600;
+    --tracking-large-title: -0.0625rem;
 
-/* Medium title - 28/28 */
-h3 {
-    font-family: 'Calibre', sans-serif;
-    font-size: 1.75rem;
+    --text-medium-title: 1.75rem;
     /* 28px */
-    line-height: 1.75rem;
+    --leading-medium-title: 1.75rem;
     /* 28px */
-    font-weight: 600;
-}
+    --weight-medium-title: 600;
+    --tracking-medium-title: -0.0625rem;
 
-/* Small title - 19/21 */
-h4 {
-    font-family: 'Calibre', sans-serif;
-    font-size: 1.1875rem;
+    --text-small-title: 1.1875rem;
     /* 19px */
-    line-height: 1.3125rem;
+    --leading-small-title: 1.3125rem;
     /* 21px */
-    font-weight: 600;
-}
+    --weight-small-title: 600;
+    --tracking-small-title: -0.03125rem;
 
-/* Tiny title - 16/20 */
-h5 {
-    font-family: 'Calibre', sans-serif;
-    font-size: 1rem;
+    --text-tiny-title: 1rem;
     /* 16px */
-    line-height: 1.25rem;
+    --leading-tiny-title: 1.25rem;
     /* 20px */
-    font-weight: normal;
-}
+    --weight-tiny-title: 400;
+    /* note: normal font-weight on h5 */
+    --tracking-tiny-title: -0.021875rem;
 
-/* Body copy - 18/21 */
-p {
-    font-family: 'Calibre', sans-serif;
-    font-size: 1.125rem;
+    --text-body-copy: 1.125rem;
     /* 18px */
-    line-height: 1.3125rem;
+    --leading-body-copy: 1.3125rem;
     /* 21px */
-}
+    --weight-body-copy: 400;
+    --tracking-body-copy: 0;
+    /* no tracking specified */
 
-/* Body copy bold - 17/20 */
-strong,
-b {
-    font-weight: 600;
-}
+    --weight-body-copy-bold: 600;
 
-/* Button - 16/15 */
-button {
-    font-family: 'Calibre', sans-serif;
-    font-size: 1rem;
+    --text-button: 1rem;
     /* 16px */
-    line-height: 0.9375rem;
+    --leading-button: 0.9375rem;
     /* 15px */
+    --weight-button: 400;
+
+    --weight-nav-link: 500;
+    --text-nav-link: 1rem;
+    /* 16px */
+    --tracking-nav-link: -0.03125rem;
+    /* -0.5px */
+
+    /* You can add more tokens if needed */
 }
 
-.nav-link {
-    font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: -0.5px;
+/* Apply tokens to semantic elements */
+@layer base {
+    h1 {
+        font-family: var(--font-calibre);
+        font-size: var(--text-main-title);
+        line-height: var(--leading-main-title);
+        font-weight: var(--weight-main-title);
+        letter-spacing: var(--tracking-main-title);
+    }
+
+    h2 {
+        font-family: var(--font-calibre);
+        font-size: var(--text-large-title);
+        line-height: var(--leading-large-title);
+        font-weight: var(--weight-large-title);
+        letter-spacing: var(--tracking-large-title);
+    }
+
+    h3 {
+        font-family: var(--font-calibre);
+        font-size: var(--text-medium-title);
+        line-height: var(--leading-medium-title);
+        font-weight: var(--weight-medium-title);
+        letter-spacing: var(--tracking-medium-title);
+    }
+
+    h4 {
+        font-family: var(--font-calibre);
+        font-size: var(--text-small-title);
+        line-height: var(--leading-small-title);
+        font-weight: var(--weight-small-title);
+        letter-spacing: var(--tracking-small-title);
+    }
+
+    h5 {
+        font-family: var(--font-calibre);
+        font-size: var(--text-tiny-title);
+        line-height: var(--leading-tiny-title);
+        font-weight: var(--weight-tiny-title);
+        letter-spacing: var(--tracking-tiny-title);
+    }
+
+    p {
+        font-family: var(--font-calibre);
+        font-size: var(--text-body-copy);
+        line-height: var(--leading-body-copy);
+        font-weight: var(--weight-body-copy);
+        letter-spacing: var(--tracking-body-copy);
+    }
+
+    strong,
+    b {
+        font-weight: var(--weight-body-copy-bold);
+    }
+
+    button {
+        font-family: var(--font-calibre);
+        font-size: var(--text-button);
+        line-height: var(--leading-button);
+        font-weight: var(--weight-button);
+    }
+}
+
+/* Utility classes you can apply anywhere */
+@layer utilities {
+    .main-title {
+        font-family: var(--font-calibre);
+        font-size: var(--text-main-title);
+        line-height: var(--leading-main-title);
+        font-weight: var(--weight-main-title);
+        letter-spacing: var(--tracking-main-title);
+    }
+
+    .large-title {
+        font-family: var(--font-calibre);
+        font-size: var(--text-large-title);
+        line-height: var(--leading-large-title);
+        font-weight: var(--weight-large-title);
+        letter-spacing: var(--tracking-large-title);
+    }
+
+    .medium-title {
+        font-family: var(--font-calibre);
+        font-size: var(--text-medium-title);
+        line-height: var(--leading-medium-title);
+        font-weight: var(--weight-medium-title);
+        letter-spacing: var(--tracking-medium-title);
+    }
+
+    .small-title {
+        font-family: var(--font-calibre);
+        font-size: var(--text-small-title);
+        line-height: var(--leading-small-title);
+        font-weight: var(--weight-small-title);
+        letter-spacing: var(--tracking-small-title);
+    }
+
+    .tiny-title {
+        font-family: var(--font-calibre);
+        font-size: var(--text-tiny-title);
+        line-height: var(--leading-tiny-title);
+        font-weight: var(--weight-tiny-title);
+        letter-spacing: var(--tracking-tiny-title);
+    }
+
+    .body-copy {
+        font-family: var(--font-calibre);
+        font-size: var(--text-body-copy);
+        line-height: var(--leading-body-copy);
+        font-weight: var(--weight-body-copy);
+        letter-spacing: var(--tracking-body-copy);
+    }
+
+    .body-copy-bold {
+        font-family: var(--font-calibre);
+        font-size: var(--text-body-copy);
+        line-height: var(--leading-body-copy);
+        font-weight: var(--weight-body-copy-bold);
+        letter-spacing: var(--tracking-body-copy);
+    }
+
+    .button-text {
+        font-family: var(--font-calibre);
+        font-size: var(--text-button);
+        line-height: var(--leading-button);
+        font-weight: var(--weight-button);
+    }
+
+    .nav-link {
+        font-weight: var(--weight-nav-link);
+        font-size: var(--text-nav-link);
+        letter-spacing: var(--tracking-nav-link);
+    }
 }

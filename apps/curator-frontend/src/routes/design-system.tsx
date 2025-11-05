@@ -136,6 +136,24 @@ function RouteComponent() {
           ))}
         </div>
       </section>
+
+      <section>
+        <h2 className="pb-2">Typography</h2>
+        <div>
+          <div className="main-title">Main Title</div>
+          <div className="large-title">Large Title</div>
+          <div className="medium-title">Medium Title</div>
+          <div className="small-title">Small Title</div>
+          <div className="tiny-title">Tiny Title</div>
+          <div className="meta-title">Meta Title</div>
+          <div className="body-copy">Body Copy — Regular</div>
+          <div className="body-copy bold">Body Copy — Bold</div>
+          <div className="tag-text">Tag / Button Copy</div>
+          <div className="tab-copy">Tab Copy</div>
+          <div className="nav-link">Navigation Link</div>
+          <div className="large-button">Large Button</div>
+        </div>
+      </section>
     </div>
   );
 }

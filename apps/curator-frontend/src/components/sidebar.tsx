@@ -4,14 +4,13 @@ import { Dialog } from '@base-ui-components/react/dialog';
 import { Tooltip } from '@base-ui-components/react/tooltip';
 import { useMatchRoute } from '@tanstack/react-router';
 import * as React from 'react';
+import { menuItems } from '@/data/menuItems';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
-import BountyIcon from '../icons/bounty.svg?react';
 import BurgerMenuIcon from '../icons/burger_menu.svg?react';
 import CloseSidebarIcon from '../icons/close_sidebar.svg?react';
 import LogoIcon from '../icons/logo.svg?react';
 import OpenSidebarIcon from '../icons/open_sidebar.svg?react';
-import DashboardIcon from '../icons/overview.svg?react';
 
 const SIDEBAR_COOKIE_NAME = 'curator_sidebar_state';
 //const _SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -199,41 +198,6 @@ function TooltipProvider({ delay = 0, ...props }: React.ComponentProps<typeof To
   return <Tooltip.Root data-slot="tooltip-provider" delay={delay} {...props} />;
 }
 
-/* function Tooltip({ ...props }: React.ComponentProps<typeof TooltipPRoot>) {
-  return (
-    <TooltipProvider>
-      <Tooltip.Root data-slot="tooltip" {...props} />
-    </TooltipProvider>
-  );
-} */
-
-/* function TooltipTrigger({ ...props }: React.ComponentProps<typeof Tooltip.Trigger>) {
-  return <Tooltip.Trigger {...props} />;
-} */
-
-/* function TooltipContent({
-  className,
-  sideOffset = 0,
-  children,
-  ...props
-}: React.ComponentProps<typeof Tooltip.Positioner>) {
-  return (
-    <Tooltip.Portal>
-      <Tooltip.Positioner
-        sideOffset={sideOffset}
-        className={cn(
-          'bg-foreground text-background animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-fit origin-(--radix-tooltip-content-transform-origin) rounded-md px-3 py-1.5 text-xs text-balance',
-          className,
-        )}
-        {...props}
-      >
-        {children}
-        <Tooltip.Arrow className="bg-foreground fill-foreground z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px]" />
-      </Tooltip.Positioner>
-    </Tooltip.Portal>
-  );
-} */
-
 export function Sidebar({
   side = 'left',
   variant = 'sidebar',
@@ -259,7 +223,6 @@ export function Sidebar({
       </div>
     );
   }
-
   if (isMobile) {
     return (
       <Dialog.Root open={openMobile} onOpenChange={setOpenMobile}>
@@ -273,7 +236,7 @@ export function Sidebar({
           <Dialog.Popup
             data-sidebar="sidebar"
             data-mobile="true"
-            className={`fixed top-0 left-0 h-full sidebar  bg-sidebar text-sidebar-foreground p-0 w-[var(--sidebar-width)] [&>button]:hidden z-50 shadow-lg transform transition-transform duration-700 ease-in-out ${
+            className={`Popup fixed top-0 left-0 h-full sidebar  bg-sidebar text-sidebar-foreground p-0 w-[var(--sidebar-width)] [&>button]:hidden z-50 shadow-lg transform transition-transform duration-700 ease-in-out ${
               openMobile ? 'translate-x-0' : '-translate-x-full'
             }`}
             style={{ '--sidebar-width': SIDEBAR_WIDTH_MOBILE } as React.CSSProperties}
@@ -284,10 +247,9 @@ export function Sidebar({
       </Dialog.Root>
     );
   }
-
   return (
     <div
-      className="group peer hidden md:block"
+      className="group peer hidden md:block "
       data-state={state}
       data-collapsible={state === 'collapsed' ? collapsible : ''}
       data-variant={variant}
@@ -364,23 +326,7 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<'li'>) {
     />
   );
 }
-const items = [
-  {
-    title: 'Dashboard',
-    url: '/',
-    icon: <BountyIcon />,
-  },
-  {
-    title: 'Bounties',
-    url: '#',
-    icon: <DashboardIcon />,
-  },
-  {
-    title: 'Design Demo',
-    url: '/design-system',
-    icon: <DashboardIcon />,
-  },
-];
+
 export function AppSidebar() {
   const matchRoute = useMatchRoute();
   const { state, isMobile } = useSidebar();
@@ -392,7 +338,7 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => {
+              {menuItems.map((item) => {
                 const isActive = !!matchRoute({ to: item.url, fuzzy: false });
                 return (
                   <SidebarMenuItem key={item.title} data-active={isActive}>
@@ -403,12 +349,12 @@ export function AppSidebar() {
                         {
                           collapsed: !(isExpanded || isMobile),
                         },
-                        'text-nav-link',
+                        'nav-link',
                       )}
                       href={item.url}
                     >
                       {item.icon}
-                      {(isExpanded || isMobile) && <span className="text-nav-link">{item.title}</span>}
+                      {(isExpanded || isMobile) && <span className="nav-link">{item.title}</span>}
                     </a>
                   </SidebarMenuItem>
                 );
