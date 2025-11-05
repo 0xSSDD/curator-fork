@@ -8,7 +8,7 @@ export default function OnboardingChecklist() {
   return (
     <section className="flex flex-col gap-4">
       {/* Title */}
-      <h2 className="w-full max-w-[40rem] medium-title flex items-center text-dark-text" style={{ flexGrow: 0 }}>
+      <h2 className="w-full max-w-[40rem] medium-title flex items-center text-dark-text flex-grow-0">
         Onboarding checklist
       </h2>
 

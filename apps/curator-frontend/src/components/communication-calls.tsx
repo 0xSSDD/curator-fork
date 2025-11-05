@@ -5,7 +5,7 @@ import TitleWithSubtitle from './title-with-subtitle';
 export function CommunicationCalls() {
   return (
     <TitleWithSubtitle title="Community calls" subtitle="">
-      <div className="flex flex-col items-start gap-3 w-full max-w-[42rem]" style={{ flexGrow: 0, flexShrink: 0 }}>
+      <div className="flex flex-col items-start  gap-3 w-full flex-grow-0 flex-shrink-0 ">
         <div className="flex flex-row items-center gap-2">
           <BaseSelect
             defaultValue="All Spaces"
@@ -25,9 +25,11 @@ export function CommunicationCalls() {
           />
         </div>
 
-        <CommunicationCallCard displayDate="Tuesday, October 27" />
+        <div className="flex flex-col items-start gap-10 w-full ">
+          <CommunicationCallCard displayDate="Tuesday, October 27" />
 
-        <CommunicationCallCard displayDate="Thursday, October 29" />
+          <CommunicationCallCard displayDate="Thursday, October 29" />
+        </div>
       </div>
     </TitleWithSubtitle>
   );
