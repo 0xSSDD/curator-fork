@@ -4,16 +4,16 @@ import TagCard from './tag-card';
 export function CompleteProfileCard() {
   return (
     <div
-      className="flex flex-col sm:flex-row justify-between items-start
+      className="flex  flex-row 
              p-5 sm:py-5 sm:pl-5 sm:pr-0 gap-5
-             w-full max-w-[672px] 
+             w-full 
              bg-accent-blue-grey-bg rounded-2xl"
     >
       {/* Left side content */}
       <div
-        className="flex flex-col justify-center items-start
+        className="flex flex-col justify-between items-start
                gap-5
-               flex-grow w-full sm:w-[70%]"
+               flex-grow w-full "
       >
         {/* Titles container */}
         <div className="flex flex-col items-start gap-1 w-full">
@@ -30,7 +30,7 @@ export function CompleteProfileCard() {
                 
                order-1 mt-4 sm:mt-0"
       >
-        <IdProfileIcon className="max-w-full max-h-full" />
+        <IdProfileIcon className="w-[120px]  h-[98px]" />
       </div>
     </div>
   );
@@ -41,7 +41,7 @@ export function JoinSpaceCard() {
     <div
       className="flex flex-col sm:flex-row justify-between items-start
              p-5 gap-5
-             w-full max-w-[672px] 
+             w-full 
              bg-accent-blue-grey-bg rounded-2xl"
     >
       <div
@@ -60,7 +60,7 @@ export function JoinSpaceCard() {
         {/* Tags */}
         <div
           className="flex flex-row flex-wrap items-center gap-2 
-                 w-full max-w-[38rem] 
+                 w-full 
                  p-0"
         >
           <TagCard image="/images/education_icon.png" tag="Education" action="Join" />
@@ -76,16 +76,16 @@ export function JoinSpaceCard() {
 export function CompleteTrainingCard() {
   return (
     <div
-      className="flex flex-col sm:flex-row justify-between items-start
+      className="flex  flex-row 
              p-5 sm:py-5 sm:pl-5 sm:pr-0 gap-5
-             w-full max-w-[672px] 
+             w-full 
              bg-accent-blue-grey-bg rounded-2xl"
     >
       {/* Left side content */}
       <div
-        className="flex flex-col justify-center items-start
+        className="flex flex-col justify-between items-start
                gap-5
-               flex-grow w-full sm:w-[70%]"
+               flex-grow w-full "
       >
         {/* Titles container */}
         <div className="flex flex-col items-start gap-1 w-full">
@@ -98,11 +98,11 @@ export function CompleteTrainingCard() {
 
       {/* Right side image group */}
       <div
-        className="relative flex items-center justify-end
+        className="  relative flex items-center justify-end
                 
                order-1 mt-4 sm:mt-0"
       >
-        <IdProfileIcon className="max-w-full max-h-full" />
+        <img src="/images/Training_2x.png" alt="training" className="w-[120px]  h-[98px]" />
       </div>
     </div>
   );

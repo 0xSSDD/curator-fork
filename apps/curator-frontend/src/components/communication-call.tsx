@@ -1,4 +1,6 @@
 import { Divider } from '@geo/design-system';
+import HoriDotsIcon from '../icons/hori_dots_icon.svg?react';
+import RecurringIcon from '../icons/recurring_icon.svg?react';
 import TagCard from './tag-card';
 
 type Props = {
@@ -18,7 +20,8 @@ export function CommunicationCallCard({ displayDate }: Props) {
           <p className="text-dark-text tag-text flex items-center ">Weekly ontology call</p>
 
           {/* Time & dash & time row */}
-          <div className="flex flex-row items-center gap-2 w-full">
+          <div className="flex flex-row items-end gap-2 w-full">
+            <RecurringIcon />
             <span className="text-grey-light-text tag-text">12:00pm</span>
             <span className="text-grey-light-text tag-text">-</span>
             <span className="text-grey-light-text tag-text">1:00pm</span>
@@ -26,21 +29,24 @@ export function CommunicationCallCard({ displayDate }: Props) {
         </div>
 
         {/* Additional tags */}
-        <div className="flex flex-row  items-start gap-4 w-full">
-          <TagCard
-            image="/images/health_icon.png"
-            tag="Health"
-            hasBackground={false}
-            action=""
-            tagNameColor="text-grey-light-text"
-          />
-          <TagCard
-            image="/images/mini_profile.png"
-            tag="37 going"
-            hasBackground={false}
-            action=""
-            tagNameColor="text-grey-light-text"
-          />
+        <div className="flex flex-row  items-center justify-between w-full">
+          <div className="flex flex-row  items-center gap-4 w-full">
+            <TagCard
+              image="/images/health_icon.png"
+              tag="Health"
+              hasBackground={false}
+              action=""
+              tagNameColor="text-grey-light-text"
+            />
+            <TagCard
+              image="/images/mini_profile.png"
+              tag="37 going"
+              hasBackground={false}
+              action=""
+              tagNameColor="text-grey-light-text"
+            />
+          </div>
+          <HoriDotsIcon />
         </div>
       </div>
 

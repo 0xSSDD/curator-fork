@@ -8,9 +8,9 @@ export default function TitleWithSubtitle({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-start gap-3 w-full max-w-[42rem] flex-grow-0 flex-shrink-0">
+    <div className="flex flex-col items-start gap-3 w-full   flex-grow-0 flex-shrink-0">
       {/* Title */}
-      <h2 className="w-full max-w-[40rem] medium-title flex items-center text-dark-text flex-grow-0">{title}</h2>
+      <h2 className="w-full   medium-title flex items-center text-dark-text flex-grow-0">{title}</h2>
 
       {/* Custom content (optional) */}
       {children && <div className="w-full">{children}</div>}
