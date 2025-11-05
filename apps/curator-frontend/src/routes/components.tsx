@@ -1,8 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { CommunicationCalls } from '@/components/communication-calls';
 import { EditProfile } from '@/components/edit-profile';
-import MyBountiesHeader from '@/components/my-bounties-header';
 import OnBoardingDashboard from '@/components/onboarding-dashboard';
+import RSVPToNonRecurringDashboard from '@/components/rsvp-to-nonrecurring-dashboard';
 
 export const Route = createFileRoute('/components')({
   component: RouteComponent,
@@ -13,13 +12,10 @@ function RouteComponent() {
     <article className="flex flex-col gap-8">
       <h1>Component test page</h1>
       <section>
-        <CommunicationCalls />
+        <RSVPToNonRecurringDashboard />
       </section>
       <section>
         <OnBoardingDashboard />
-      </section>
-      <section>
-        <MyBountiesHeader />
       </section>
       <section className="box">
         <EditProfile
