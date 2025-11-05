@@ -34,6 +34,7 @@ describe('ProfileGroupLive', () => {
     Effect.gen(function* () {
       const mockService = Layer.sync(KnowledgeGraphProfileService.KnowledgeGraphProfileService, () => ({
         findSkills: (_query: string) => Effect.succeed([{ id: '1', name: 'Skill 1' } as Domain.Skill]),
+        findCompanies: (_query: string) => Effect.succeed([{ id: '1', name: 'Company 1' } as Domain.Company]),
       }));
 
       const apiLive = HttpApiBuilder.api(Api.curatorApi).pipe(Layer.provide(HandlersLive), Layer.provide(mockService));
@@ -48,6 +49,31 @@ describe('ProfileGroupLive', () => {
       yield* Effect.sync(() => {
         expect(response.status).toBe(200);
         expect(body).toEqual({ skills: [{ id: '1', name: 'Skill 1' }] });
+      });
+
+      yield* Effect.promise(() => dispose());
+    }),
+  );
+
+  it.effect('getProfileCompanies returns companies', ({ expect }) =>
+    Effect.gen(function* () {
+      const mockService = Layer.sync(KnowledgeGraphProfileService.KnowledgeGraphProfileService, () => ({
+        findSkills: (_query: string) => Effect.succeed([{ id: '1', name: 'Skill 1' } as Domain.Skill]),
+        findCompanies: (_query: string) => Effect.succeed([{ id: '1', name: 'Company 1' } as Domain.Company]),
+      }));
+
+      const apiLive = HttpApiBuilder.api(Api.curatorApi).pipe(Layer.provide(HandlersLive), Layer.provide(mockService));
+
+      const { handler, dispose } = HttpApiBuilder.toWebHandler(Layer.mergeAll(apiLive, HttpServer.layerContext));
+
+      const response = yield* Effect.promise(() =>
+        handler(new Request('http://localhost/profile/companies?query=Crypto')),
+      );
+      const body = yield* Effect.promise(() => response.json());
+
+      yield* Effect.sync(() => {
+        expect(response.status).toBe(200);
+        expect(body).toEqual({ companies: [{ id: '1', name: 'Company 1' }] });
       });
 
       yield* Effect.promise(() => dispose());

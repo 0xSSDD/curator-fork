@@ -27,7 +27,9 @@ This project uses **pnpm** (v10.18.3) as the package manager in a monorepo struc
 **CRITICAL**: After every file change, run `pnpm lint:fix` and `pnpm check` to ensure code quality.
 
 ### Testing
-- `pnpm test` - Run all tests using Vitest
+- `pnpm test` - Run all tests using Vitest (all packages)
+- `pnpm test:be` - Run backend tests only (avoids frontend router errors)
+- `pnpm test:be --run` - Run backend tests once and exit
 - Uses `@effect/vitest` for Effect-aware testing in backend
 - Test files: `test/**/*.test.ts` and `src/**/*.test.ts`
 

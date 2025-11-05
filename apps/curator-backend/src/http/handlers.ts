@@ -14,15 +14,25 @@ const HealthGroupLive = HttpApiBuilder.group(Api.curatorApi, 'Health', (handlers
  * Profile Group Handlers
  */
 const ProfileGroupLive = HttpApiBuilder.group(Api.curatorApi, 'Profile', (handlers) => {
-  return handlers.handle(
-    'getProfileSkills',
-    Effect.fn('getProfileSkills')(function* ({ urlParams }: { urlParams: { query: string } }) {
-      const knowledgeGraphProfileService = yield* KnowledgeGraphProfileService.KnowledgeGraphProfileService;
+  return handlers
+    .handle(
+      'getProfileSkills',
+      Effect.fn('getProfileSkills')(function* ({ urlParams }: { urlParams: { query: string } }) {
+        const knowledgeGraphProfileService = yield* KnowledgeGraphProfileService.KnowledgeGraphProfileService;
 
-      const skills = yield* knowledgeGraphProfileService.findSkills(urlParams.query);
-      return { skills };
-    }),
-  );
+        const skills = yield* knowledgeGraphProfileService.findSkills(urlParams.query);
+        return { skills };
+      }),
+    )
+    .handle(
+      'getProfileCompanies',
+      Effect.fn('getProfileCompanies')(function* ({ urlParams }: { urlParams: { query: string } }) {
+        const knowledgeGraphProfileService = yield* KnowledgeGraphProfileService.KnowledgeGraphProfileService;
+
+        const companies = yield* knowledgeGraphProfileService.findCompanies(urlParams.query);
+        return { companies };
+      }),
+    );
 });
 
 /**

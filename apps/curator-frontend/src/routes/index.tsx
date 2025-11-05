@@ -1,6 +1,7 @@
 import { useGeoAccount } from '@geo/design-system';
 import { createFileRoute } from '@tanstack/react-router';
 import { EditProfile } from '@/components/edit-profile';
+import { Logout } from '@/components/logout';
 import { network } from '@/config';
 
 export const Route = createFileRoute('/')({
@@ -21,11 +22,19 @@ function Index() {
   if (geoAccount.status === 'signed-in') {
     if (geoAccount.onboardingStep === 'edit-profile') {
       return (
-        <EditProfile
-          onSubmit={({ name, githubUrl, xUrl, linkedinUrl, avatarData }) => {
-            geoAccount.createAccount({ name, githubUrl, xUrl, linkedinUrl, avatarData, network });
-          }}
-        />
+        <div className="fixed inset-0 h-screen w-screen overflow-y-auto z-50 bg-background">
+          <div className="bg-white w-full flex items-center px-2 py-2 md:px-5 md:py-2 justify-end">
+            <Logout />
+          </div>
+
+          <div className="max-w-[672px] mx-auto">
+            <EditProfile
+              onSubmit={({ name, githubUrl, xUrl, linkedinUrl, avatarData }) => {
+                geoAccount.createAccount({ name, githubUrl, xUrl, linkedinUrl, avatarData, network });
+              }}
+            />
+          </div>
+        </div>
       );
     }
 

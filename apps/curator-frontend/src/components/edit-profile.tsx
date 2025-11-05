@@ -1,4 +1,4 @@
-import { AvatarUpload } from '@geo/design-system';
+import { AvatarUpload, Button, Divider, Field, Input, Textarea } from '@geo/design-system';
 import type { Id, Op } from '@graphprotocol/grc-20';
 import { useState } from 'react';
 import { network } from '@/config';
@@ -21,33 +21,74 @@ export const EditProfile = ({
     avatarData: { id: Id; ops: Op[]; cid: string } | undefined;
   }) => void;
 }) => {
+  const [name, setName] = useState<string>('');
   const [avatarData, setAvatarData] = useState<{ id: Id; ops: Op[]; cid: string } | undefined>(undefined);
 
   return (
-    <article>
+    <article className="mt-12">
       <h3 className="pb-10">Fill out your profile</h3>
       <form
         onSubmit={(event) => {
           event.preventDefault();
           const formData = new FormData(event.target as HTMLFormElement);
-          const name = formData.get('name') as string;
           const githubUrl = formData.get('githubUrl') as string;
           const xUrl = formData.get('xUrl') as string;
           const linkedinUrl = formData.get('linkedinUrl') as string;
-          if (!name) {
+          if (!name.trim()) {
             return;
           }
-          onSubmit({ name, githubUrl, xUrl, linkedinUrl, avatarData });
+          onSubmit({ name: name.trim(), githubUrl, xUrl, linkedinUrl, avatarData });
         }}
       >
         <AvatarUpload network={network} onUpload={(newAvatarData) => setAvatarData(newAvatarData)} />
-        <input type="text" name="name" placeholder="Name" />
-        <input type="text" name="xUrl" placeholder="X URL" />
-        <input type="text" name="linkedinUrl" placeholder="LinkedIn URL" />
-        <input type="text" name="githubUrl" placeholder="GitHub URL" />
-        <SkillsField />
+        <div className="flex flex-row gap-4 items-center mb-3">
+          <Input
+            type="text"
+            name="name"
+            placeholder="Name"
+            className="text-[46px]/[44px] tracking-[-1px] md:text-[46px]/[44px] md:tracking-[-1px] font-semibold"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <div className="text-grey-light-text">Required</div>
+        </div>
 
-        <button type="submit">Save</button>
+        <Textarea name="description" placeholder="Describe what you do…" className="mb-10" />
+
+        <div className="flex flex-col gap-4">
+          <Divider />
+          <Field.Root>
+            <Field.Label>Works at</Field.Label>
+            <Input type="text" name="worksAt" placeholder="Find or create…" />
+          </Field.Root>
+          <Divider />
+          <Field.Root>
+            <Field.Label>Skills</Field.Label>
+            <Input type="text" name="skills" placeholder="Find or create…" />
+          </Field.Root>
+          <Divider />
+          <Field.Root>
+            <Field.Label>X</Field.Label>
+            <Input type="text" name="xUrl" placeholder="URL …" />
+          </Field.Root>
+          <Divider />
+          <Field.Root>
+            <Field.Label>LinkedIn</Field.Label>
+            <Input type="text" name="linkedinUrl" placeholder="URL …" />
+          </Field.Root>
+          <Divider />
+          <Field.Root>
+            <Field.Label>GitHub</Field.Label>
+            <Input type="text" name="githubUrl" placeholder="URL …" />
+          </Field.Root>
+          <Divider />
+        </div>
+        <SkillsField />
+        <div className="flex justify-end mt-5 mb-16">
+          <Button type="submit" disabled={!name.trim()}>
+            Publish
+          </Button>
+        </div>
       </form>
     </article>
   );
