@@ -7,3 +7,4 @@ export * from './components/ipfs-image.js';
 export * from './components/textarea.js';
 export * from './hooks/use-geo-account.js';
 export type * from './types.js';
+export * from './utils/cn.js';

@@ -2,11 +2,11 @@
 
 import { Dialog } from '@base-ui-components/react/dialog';
 import { Tooltip } from '@base-ui-components/react/tooltip';
+import { cn } from '@geo/design-system';
 import { useMatchRoute } from '@tanstack/react-router';
 import * as React from 'react';
 import { menuItems } from '@/data/menuItems';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { cn } from '@/lib/utils';
 import BurgerMenuIcon from '../icons/burger_menu.svg?react';
 import CloseSidebarIcon from '../icons/close_sidebar.svg?react';
 import LogoIcon from '../icons/logo.svg?react';

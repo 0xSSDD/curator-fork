@@ -26,7 +26,7 @@ export const Header = () => {
 
           {/* Profile Icon */}
           <div className="w-6 h-6 md:w-6 md:h-6 bg-white rounded-full">
-            <img src="/no_avatar_set.svg" alt="Profile" className="w-full h-full object-cover rounded-full" />
+            <img src="/images/no_avatar_set.svg" alt="Profile" className="w-full h-full object-cover rounded-full" />
           </div>
         </div>
       ) : (
