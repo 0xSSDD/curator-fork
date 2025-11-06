@@ -6,7 +6,8 @@ import type { Network } from '../types.js';
 import { createAccountSpace } from '../utils/create-account-space.js';
 import { fetchGeoProfile } from '../utils/fetch-geo-profile.js';
 
-export type OnboardingStep = 'edit-profile' | 'create-account-space' | 'complete';
+export type CreatingAccountSpaceState = 'creating-space' | 'finalizing' | 'inactive';
+export type OnboardingStep = 'edit-profile' | 'create-account-space' | 'finalizing-account-space' | 'complete';
 export type GeoAccountState =
   | { status: 'loading' }
   | { status: 'signed-out' }
@@ -27,7 +28,7 @@ export type GeoAccountState =
 export const useGeoAccount = (): GeoAccountState => {
   const { authenticated: privyAuthenticated, ready: privyReady } = usePrivy();
   const { wallets, ready: walletsReady } = useWallets();
-  const [isCreatingAccountSpace, setIsCreatingAccountSpace] = useState(false);
+  const [createAccountSpaceState, setCreateAccountSpaceState] = useState<CreatingAccountSpaceState>('inactive');
   const queryClient = useQueryClient();
 
   const createAccount = useCallback(
@@ -46,7 +47,7 @@ export const useGeoAccount = (): GeoAccountState => {
       avatarData: { id: Id; ops: Op[]; cid: string } | undefined;
       network: Network;
     }) => {
-      setIsCreatingAccountSpace(true);
+      setCreateAccountSpaceState('creating-space');
       try {
         if (!walletsReady) return null;
         const embeddedWallet = wallets.find((wallet) => wallet.walletClientType === 'privy') || wallets[0];
@@ -61,8 +62,10 @@ export const useGeoAccount = (): GeoAccountState => {
           avatarData,
           network,
         });
+        setCreateAccountSpaceState('finalizing');
+        await new Promise((resolve) => setTimeout(resolve, 3000));
         queryClient.invalidateQueries({ queryKey: ['current-user-profile'] });
-        setIsCreatingAccountSpace(false);
+        setCreateAccountSpaceState('inactive');
         return {
           accountId,
           spaceId,
@@ -70,7 +73,7 @@ export const useGeoAccount = (): GeoAccountState => {
         };
       } catch (error) {
         console.error(error);
-        setIsCreatingAccountSpace(false);
+        setCreateAccountSpaceState('inactive');
         return null;
       }
     },
@@ -103,8 +106,11 @@ export const useGeoAccount = (): GeoAccountState => {
   }
 
   let step: OnboardingStep = 'edit-profile';
-  if (isCreatingAccountSpace) {
+  if (createAccountSpaceState === 'creating-space') {
     step = 'create-account-space';
+  }
+  if (createAccountSpaceState === 'finalizing') {
+    step = 'finalizing-account-space';
   }
   if (profile) {
     step = 'complete';
