@@ -1,4 +1,4 @@
-import { Tabs } from '@base-ui-components/react/tabs';
+import { Tabs as BaseTabs } from '@base-ui-components/react/tabs';
 import type React from 'react';
 
 interface TabItem {
@@ -6,18 +6,18 @@ interface TabItem {
   label: string;
 }
 
-interface BaseTabsProps {
+interface TabsProps {
   tabs: TabItem[];
   panels: Record<string, React.ReactNode>;
   defaultValue?: string;
 }
 
-export function BaseTabs({ tabs, panels, defaultValue }: BaseTabsProps) {
+export function Tabs({ tabs, panels, defaultValue }: TabsProps) {
   return (
-    <Tabs.Root defaultValue={defaultValue ?? tabs[0]?.value ?? ''}>
-      <Tabs.List className="relative z-0 flex gap-1 px-1 shadow-[inset_0_-1px] shadow-gray-200">
+    <BaseTabs.Root defaultValue={defaultValue ?? tabs[0]?.value ?? ''}>
+      <BaseTabs.List className="relative z-0 flex gap-1 px-1 shadow-[inset_0_-1px] shadow-gray-200">
         {tabs.map(({ value, label }) => (
-          <Tabs.Tab
+          <BaseTabs.Tab
             key={value}
             className={`
               flex h-8 items-center justify-center border-0 px-2 break-keep whitespace-nowrap  
@@ -34,12 +34,12 @@ export function BaseTabs({ tabs, panels, defaultValue }: BaseTabsProps) {
             value={value}
           >
             {label}
-          </Tabs.Tab>
+          </BaseTabs.Tab>
         ))}
-      </Tabs.List>
+      </BaseTabs.List>
 
       {tabs.map(({ value }) => (
-        <Tabs.Panel
+        <BaseTabs.Panel
           key={value}
           className="
             relative flex h-32 items-center justify-center
@@ -49,8 +49,8 @@ export function BaseTabs({ tabs, panels, defaultValue }: BaseTabsProps) {
           value={value}
         >
           <div>{panels[value]}</div>
-        </Tabs.Panel>
+        </BaseTabs.Panel>
       ))}
-    </Tabs.Root>
+    </BaseTabs.Root>
   );
 }
