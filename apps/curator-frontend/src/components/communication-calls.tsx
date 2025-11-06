@@ -1,4 +1,4 @@
-import { BaseSelect } from '@geo/design-system/components/base-select';
+import { Select } from '@geo/design-system';
 import { CommunicationCallCard } from './communication-call';
 import TitleWithSubtitle from './title-with-subtitle';
 
@@ -7,7 +7,7 @@ export function CommunicationCalls() {
     <TitleWithSubtitle title="Community calls" subtitle="">
       <div className="flex flex-col items-start  gap-3 w-full flex-grow-0 flex-shrink-0 ">
         <div className="flex flex-row items-center gap-2">
-          <BaseSelect
+          <Select
             defaultValue="All Spaces"
             items={[
               { label: 'All Spaces', value: 'All Spaces' },
@@ -16,7 +16,7 @@ export function CommunicationCalls() {
               { label: 'Research', value: 'research' },
             ]}
           />
-          <BaseSelect
+          <Select
             defaultValue="All"
             items={[
               { label: 'All', value: 'All' },
