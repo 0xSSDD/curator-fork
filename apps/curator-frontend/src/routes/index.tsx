@@ -1,5 +1,6 @@
 import { useGeoAccount } from '@geo/design-system';
 import { createFileRoute } from '@tanstack/react-router';
+import { DialogCreateSpace } from '@/components/dialog-create-space';
 import { EditProfile } from '@/components/edit-profile';
 import { Logout } from '@/components/logout';
 import OnBoardingDashboard from '@/components/onboarding-dashboard';
@@ -21,7 +22,11 @@ function Index() {
   }
 
   if (geoAccount.status === 'signed-in') {
-    if (geoAccount.onboardingStep === 'edit-profile') {
+    if (
+      geoAccount.onboardingStep === 'edit-profile' ||
+      geoAccount.onboardingStep === 'create-account-space' ||
+      geoAccount.onboardingStep === 'finalizing-account-space'
+    ) {
       return (
         <div className="fixed inset-0 h-screen w-screen overflow-y-auto z-50 bg-background">
           <div className="bg-white w-full flex items-center px-2 py-2 md:px-5 md:py-2 justify-end">
@@ -35,12 +40,15 @@ function Index() {
               }}
             />
           </div>
+
+          {(geoAccount.onboardingStep === 'create-account-space' ||
+            geoAccount.onboardingStep === 'finalizing-account-space') && (
+            <DialogCreateSpace
+              state={geoAccount.onboardingStep === 'create-account-space' ? 'creating-space' : 'finalizing'}
+            />
+          )}
         </div>
       );
-    }
-
-    if (geoAccount.onboardingStep === 'create-account-space') {
-      return <div>Creating account space…</div>;
     }
 
     return (

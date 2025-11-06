@@ -1,46 +1,47 @@
 /* index.css */
 
 /* 1️⃣ Load Tailwind (v4 handles all layers internally) */
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* 2️⃣ Load plugins like tw-animate */
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 /* 3️⃣ Optional: import your own design system */
 @source "../../../packages/design-system/src";
 
 /* 4️⃣ Custom global styles */
-@import "./styles/containers.css";
-@import "./styles/typography.css";
-@import "./styles/sidebar.css";
+@import './styles/containers.css';
+@import './styles/typography.css';
+@import './styles/sidebar.css';
+@import './styles/backgrounds.css';
 
 /* 5️⃣ Font definitions */
 @font-face {
-  font-family: "Calibre";
+  font-family: 'Calibre';
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/calibre-regular.woff2") format("woff2");
+  src: url('/fonts/calibre-regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Calibre";
+  font-family: 'Calibre';
   font-style: normal;
   font-weight: 500;
-  src: url("/fonts/calibre-medium.woff2") format("woff2");
+  src: url('/fonts/calibre-medium.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Calibre";
+  font-family: 'Calibre';
   font-style: normal;
   font-weight: 600;
-  src: url("/fonts/calibre-semibold.woff2") format("woff2");
+  src: url('/fonts/calibre-semibold.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Calibre";
+  font-family: 'Calibre';
   font-style: normal;
   font-weight: 700;
-  src: url("/fonts/calibre-bold.woff2") format("woff2");
+  src: url('/fonts/calibre-bold.woff2') format('woff2');
 }
 
 /* 6️⃣ Theme tokens (Tailwind 4 @theme inline is perfect here) */
@@ -82,7 +83,7 @@
   --color-accent-pink-bg: #ffe0f6;
   --color-accent-blue-grey-bg: #edeef3;
 
-  --font-calibre: "Calibre", sans-serif;
+  --font-calibre: 'Calibre', sans-serif;
 
   /* -----------------------------------
      DESKTOP TYPOGRAPHY (default)
@@ -180,7 +181,7 @@
 @layer base {
   body {
     @apply bg-background text-primary-dark min-h-screen overflow-x-clip;
-    font-family: "Calibre", sans-serif;
+    font-family: 'Calibre', sans-serif;
     text-rendering: optimizeLegibility;
     font-size: 16px;
   }
