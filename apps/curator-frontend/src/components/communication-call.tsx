@@ -1,4 +1,6 @@
-import { Divider } from '@geo/design-system';
+import { BaseContextMenu, Divider } from '@geo/design-system';
+import AddToCalnederIcon from '../icons/add_to_calender.svg?react';
+import GoingArrowIcon from '../icons/going_arrow.svg?react';
 import HoriDotsIcon from '../icons/hori_dots_icon.svg?react';
 import RecurringIcon from '../icons/recurring_icon.svg?react';
 import TagCard from './tag-card';
@@ -46,7 +48,14 @@ export function CommunicationCallCard({ displayDate }: Props) {
               tagNameColor="text-grey-light-text"
             />
           </div>
-          <HoriDotsIcon />
+          <BaseContextMenu
+            items={[
+              { label: 'Going?', icon: <GoingArrowIcon />, onClick: () => alert('Going!') },
+              { label: 'Add to calendar', icon: <AddToCalnederIcon />, onClick: () => alert('Shared!') },
+            ]}
+          >
+            <HoriDotsIcon />
+          </BaseContextMenu>
         </div>
       </div>
 
