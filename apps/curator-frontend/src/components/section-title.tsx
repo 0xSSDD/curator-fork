@@ -15,7 +15,6 @@ export default function SectionTitle({ number }: SectionTitleProps) {
         main-title
         text-dark-text
       "
-      style={{ fontWeight: 600 }}
     >
       {/* Icon container */}
       <BountyFilledIcon width={32} height={32} />

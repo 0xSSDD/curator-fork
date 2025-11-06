@@ -1,4 +1,5 @@
 export * from './components/avatar-upload.js';
+export * from './components/base-combobox.js';
 export * from './components/base-select.js';
 export * from './components/button.js';
 export * from './components/divider.js';

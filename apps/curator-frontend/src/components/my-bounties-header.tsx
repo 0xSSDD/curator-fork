@@ -1,3 +1,4 @@
+import OriginalCombobox from '@geo/design-system/components/base-combobox';
 import { BaseSelect } from '@geo/design-system/components/base-select';
 import TitleWithSubtitle from './title-with-subtitle';
 
@@ -5,7 +6,7 @@ export default function MyBountiesHeader() {
   return (
     <TitleWithSubtitle title="My bounties" subtitle="Self-assigned or allocated bounties will appear here">
       <div className="flex flex-row items-center gap-2">
-        <BaseSelect
+        <OriginalCombobox
           defaultValue="All Spaces"
           items={[
             { label: 'All Spaces', value: 'All Spaces' },
