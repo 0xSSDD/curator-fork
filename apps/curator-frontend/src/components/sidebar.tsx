@@ -7,10 +7,7 @@ import { useMatchRoute } from '@tanstack/react-router';
 import * as React from 'react';
 import { menuItems } from '@/data/menuItems';
 import { useIsMobile } from '@/hooks/use-mobile';
-import BurgerMenuIcon from '../icons/burger_menu.svg?react';
-import CloseSidebarIcon from '../icons/close_sidebar.svg?react';
-import LogoIcon from '../icons/logo.svg?react';
-import OpenSidebarIcon from '../icons/open_sidebar.svg?react';
+import { BurgerMenuIcon, CloseSidebarIcon, LogoIcon, OpenSidebarIcon } from '@/icons/icons';
 
 const SIDEBAR_COOKIE_NAME = 'curator_sidebar_state';
 //const _SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;

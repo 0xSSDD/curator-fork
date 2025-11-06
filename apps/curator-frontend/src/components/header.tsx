@@ -1,6 +1,6 @@
 import { Tag } from '@geo/design-system/components/tag';
 import { usePrivy } from '@privy-io/react-auth';
-import BountyFilledIcon from '../icons/bounty_filled.svg?react';
+import { BountyFilledIcon } from '@/icons/icons';
 import { Login } from './login';
 import { Logout } from './logout';
 import { CustomSidebarTrigger, useSidebar } from './sidebar';

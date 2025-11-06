@@ -1,4 +1,4 @@
-import BountyFilledIcon from '../icons/bounty_filled.svg?react';
+import { BountyFilledIcon } from '@/icons/icons';
 
 interface SectionTitleProps {
   number: number;

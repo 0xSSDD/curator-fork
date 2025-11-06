@@ -1,5 +1,16 @@
+import BountyIcon from '../icons/bounty.svg?react';
+import BountyFilledIcon from '../icons/bounty_filled.svg?react';
+import BurgerMenuIcon from '../icons/burger_menu.svg?react';
+import CloseSidebarIcon from '../icons/close_sidebar.svg?react';
+import CompletedIcon from '../icons/completed.svg?react';
+import GrayCircleIcon from '../icons/gray_circle.svg?react';
 import HoriDotsIcon from '../icons/hori_dots_icon.svg?react';
+import IdProfileIcon from '../icons/id_profile.svg?react';
+import LogoIcon from '../icons/logo.svg?react';
+import OpenSidebarIcon from '../icons/open_sidebar.svg?react';
+import DashboardIcon from '../icons/overview.svg?react';
 import RecurringIcon from '../icons/recurring_icon.svg?react';
+import UnComletedIcon from '../icons/uncompleted.svg?react';
 
 function CheckIcon(props: React.ComponentProps<'svg'>) {
   return (
@@ -48,4 +59,21 @@ function ClearIcon(props: React.ComponentProps<'svg'>) {
   );
 }
 
-export { HoriDotsIcon, RecurringIcon, ClearIcon, ChevronDownIcon, CheckIcon };
+export {
+  HoriDotsIcon,
+  RecurringIcon,
+  IdProfileIcon,
+  CompletedIcon,
+  GrayCircleIcon,
+  CloseSidebarIcon,
+  BountyFilledIcon,
+  BurgerMenuIcon,
+  LogoIcon,
+  OpenSidebarIcon,
+  DashboardIcon,
+  UnComletedIcon,
+  BountyIcon,
+  ClearIcon,
+  ChevronDownIcon,
+  CheckIcon,
+};

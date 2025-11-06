@@ -1,5 +1,5 @@
 import { Button } from '@geo/design-system';
-import IdProfileIcon from '../icons/id_profile.svg?react';
+import { IdProfileIcon } from '@/icons/icons';
 import TagCard from './tag-card';
 export function CompleteProfileCard() {
   return (

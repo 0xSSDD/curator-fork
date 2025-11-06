@@ -1,8 +1,5 @@
 import { Tag } from '@geo/design-system/components/tag';
-import BountyFilledIcon from '../icons/bounty_filled.svg?react';
-import CompletedIcon from '../icons/completed.svg?react';
-import GrayCircleIcon from '../icons/gray_circle.svg?react';
-import UnComletedIcon from '../icons/uncompleted.svg?react';
+import { BountyFilledIcon, CompletedIcon, GrayCircleIcon, UnComletedIcon } from '@/icons/icons';
 
 export default function OnboardingChecklist() {
   return (
