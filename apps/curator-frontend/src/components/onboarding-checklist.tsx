@@ -5,7 +5,7 @@ export default function OnboardingChecklist() {
   return (
     <section className="flex flex-col gap-4">
       {/* Title */}
-      <h2 className="w-full   medium-title flex items-center text-dark-text flex-grow-0">Onboarding checklist</h2>
+      <h2 className="w-full medium-title flex items-center text-dark-text flex-grow-0">Onboarding checklist</h2>
 
       {/* Checklist Container */}
       <div className="flex flex-col justify-between gap-8 p-5 w-[320px] h-[241px] bg-white border border-gray-300 rounded-[16px]">
