@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { EditProfile } from '@/components/edit-profile';
 import OnBoardingDashboard from '@/components/onboarding-dashboard';
+import RsvpToNonRecurringDashboard from '@/components/rsvp-to-nonrecurring-dashboard';
 
 export const Route = createFileRoute('/components')({
   component: RouteComponent,
@@ -10,6 +11,9 @@ function RouteComponent() {
   return (
     <article className="flex flex-col gap-8">
       <h1>Component test page</h1>
+      <section>
+        <RsvpToNonRecurringDashboard />
+      </section>
       <section>
         <OnBoardingDashboard />
       </section>

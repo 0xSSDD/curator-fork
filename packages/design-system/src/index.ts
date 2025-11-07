@@ -1,11 +1,14 @@
 export * from './components/avatar-upload.js';
 export * from './components/button.js';
+export * from './components/combobox.js';
 export * from './components/dialog.js';
 export * from './components/divider.js';
 export * from './components/dots.js';
 export * from './components/field.js';
 export * from './components/input.js';
 export * from './components/ipfs-image.js';
+export * from './components/select.js';
+export * from './components/tabs.js';
 export * from './components/textarea.js';
 export * from './hooks/use-geo-account.js';
 export type * from './types.js';

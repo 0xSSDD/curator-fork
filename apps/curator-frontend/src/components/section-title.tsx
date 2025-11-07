@@ -1,4 +1,4 @@
-import BountyFilledIcon from '../icons/bounty_filled.svg?react';
+import { BountyFilledIcon } from '@/icons/icons';
 
 interface SectionTitleProps {
   number: number;
@@ -15,7 +15,6 @@ export default function SectionTitle({ number }: SectionTitleProps) {
         main-title
         text-dark-text
       "
-      style={{ fontWeight: 600 }}
     >
       {/* Icon container */}
       <BountyFilledIcon width={32} height={32} />

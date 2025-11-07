@@ -1,6 +1,5 @@
 import type { JSX } from 'react';
-import BountyIcon from '../icons/bounty.svg?react';
-import DashboardIcon from '../icons/overview.svg?react';
+import { BountyIcon, DashboardIcon } from '@/icons/icons';
 
 // Define the type for better IntelliSense and safety
 export interface MenuItem {

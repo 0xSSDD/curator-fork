@@ -9,7 +9,7 @@ export default function OnBoardingDashboard() {
       <div className="flex flex-col gap-6">
         <SectionTitle number={0} />
         <div className="flex flex-row gap-6">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 flex-[3]">
             <div className="flex flex-col gap-4">
               <CompleteProfileCard />
               <JoinSpaceCard />
@@ -22,7 +22,7 @@ export default function OnBoardingDashboard() {
               }
             />
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 flex-[1]">
             <OnboardingChecklist />
 
             <TitleWithSubtitle title={'Community calls'} subtitle={'Join any space to see all upcoming calls'} />
