@@ -3,6 +3,7 @@ import BountyFilledIcon from '../icons/bounty_filled.svg?react';
 import BurgerMenuIcon from '../icons/burger_menu.svg?react';
 import CloseSidebarIcon from '../icons/close_sidebar.svg?react';
 import CompletedIcon from '../icons/completed.svg?react';
+import DifficultyStarIcon from '../icons/difficulty_star.svg?react';
 import GrayCircleIcon from '../icons/gray_circle.svg?react';
 import HoriDotsIcon from '../icons/hori_dots_icon.svg?react';
 import IdProfileIcon from '../icons/id_profile.svg?react';
@@ -73,6 +74,7 @@ export {
   DashboardIcon,
   UnComletedIcon,
   BountyIcon,
+  DifficultyStarIcon,
   ClearIcon,
   ChevronDownIcon,
   CheckIcon,

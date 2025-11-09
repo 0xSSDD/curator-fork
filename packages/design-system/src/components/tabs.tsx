@@ -20,8 +20,8 @@ export function Tabs({ tabs, panels, defaultValue }: TabsProps) {
           <BaseTabs.Tab
             key={value}
             className={`
-              flex h-8 items-center justify-center border-0 px-2 break-keep whitespace-nowrap  
-              tiny-title text-grey-light-text outline-none select-none 
+              flex h-8 items-center justify-center   px-2 break-keep whitespace-nowrap  
+              tiny-title text-grey-light-text  pb-1 
               data-[selected]:pb-1
               data-[selected]:border-b-2
               data-[selected]:border-dark-text
@@ -42,8 +42,7 @@ export function Tabs({ tabs, panels, defaultValue }: TabsProps) {
         <BaseTabs.Panel
           key={value}
           className="
-            relative flex h-32 items-center justify-center
-            -outline-offset-1 outline-blue-800
+            -outline-offset-1 
             focus-visible:rounded-md focus-visible:outline focus-visible:outline-2
           "
           value={value}

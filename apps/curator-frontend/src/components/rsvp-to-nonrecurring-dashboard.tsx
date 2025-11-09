@@ -1,9 +1,9 @@
 import { Tabs } from '@geo/design-system';
-import { BountiesTab } from './BountiesTab';
+import { BountiesTab } from './bounties-tab';
 import { CommunicationCalls } from './communication-calls';
 import MyBountiesHeader from './my-bounties-header';
-import { SpacesTab } from './SpacesTab';
 import SectionTitle from './section-title';
+import { SpacesTab } from './spaces-tab';
 import TitleWithSubtitle from './title-with-subtitle';
 
 export default function RsvpToNonRecurringDashboard() {
@@ -25,7 +25,7 @@ export default function RsvpToNonRecurringDashboard() {
           <div className="flex flex-col gap-6 flex-[3]">
             <MyBountiesHeader />
             <TitleWithSubtitle title="Recommended for you" subtitle="">
-              <Tabs tabs={tabs} panels={panels} defaultValue="overview" />
+              <Tabs tabs={tabs} panels={panels} defaultValue="Bounties" />
             </TitleWithSubtitle>
           </div>
           <div className="flex-[1]">

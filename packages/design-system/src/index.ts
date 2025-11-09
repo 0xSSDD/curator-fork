@@ -9,6 +9,7 @@ export * from './components/input.js';
 export * from './components/ipfs-image.js';
 export * from './components/select.js';
 export * from './components/tabs.js';
+export * from './components/tag.js';
 export * from './components/textarea.js';
 export * from './hooks/use-geo-account.js';
 export type * from './types.js';
