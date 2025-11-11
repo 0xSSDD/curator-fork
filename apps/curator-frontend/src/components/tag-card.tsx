@@ -8,9 +8,9 @@ export default function TagCard({
   return (
     <div
       className={`flex flex-row items-center gap-2
-            w-fit h-9
+            w-fit 
             rounded-xl
-            ${hasBackground ? 'bg-white shadow-[0_0.75rem_1rem_rgba(127,132,159,0.2)]  p-2 ' : ''}`}
+            ${hasBackground ? 'bg-white shadow-[0_0.75rem_1rem_rgba(127,132,159,0.2)]  p-2 h-9' : 'h-5'}`}
     >
       {/* Icon */}
       <div className="relative w-5 h-5 rounded-md overflow-hidden flex-shrink-0">

@@ -1,3 +1,4 @@
+export * from './components/action-popover.js';
 export * from './components/avatar-upload.js';
 export * from './components/button.js';
 export * from './components/combobox.js';
@@ -11,6 +12,7 @@ export * from './components/select.js';
 export * from './components/tabs.js';
 export * from './components/tag.js';
 export * from './components/textarea.js';
+export * from './components/tooltip.js';
 export * from './hooks/use-geo-account.js';
 export type * from './types.js';
 export * from './utils/cn.js';

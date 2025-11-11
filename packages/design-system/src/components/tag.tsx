@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-type Variant = 'points' | 'bounty-dark' | 'active' | 'profile-points' | 'dark-icon' | 'mid-icon' | 'skill';
+type Variant = 'points' | 'bounty-dark' | 'active' | 'profile-points' | 'dark-icon' | 'mid-icon' | 'skill' | 'going';
 
 interface TagProps extends React.ComponentPropsWithoutRef<'div'> {
   variant?: Variant;
@@ -18,6 +18,7 @@ export const Tag = ({ variant = 'points', icon, text, className, ...rest }: TagP
     'profile-points': 'bg-[var(--color-accent-blue-grey-bg)] text-[var(--color-primary-text-dark)] rounded-full',
     'dark-icon': 'bg-[var(--color-primary-text-dark)] text-[var(--color-secondary-white)] rounded-[6px]',
     'mid-icon': 'bg-[var(--color-accent-blue-grey-bg)] text-[var(--color-primary-text-dark)] rounded-[6px]',
+    going: 'bg-accent-blue-grey-bg meta-title rounded-[34px] gap-[10px] px-[6px] h-[13px] w-[42px]',
     skill:
       'bg-[var(--color-secondary-white)] border border-[var(--color-secondary-medium-grey)] text-[var(--color-primary-text-dark)] rounded-[6px]',
   };

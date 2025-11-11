@@ -187,6 +187,13 @@
         letter-spacing: var(--tracking-body-copy);
     }
 
+    .meta-title {
+        font-size: var(--text-meta-title);
+        line-height: var(--leading-meta-title);
+        font-weight: var(--weight-meta-title);
+        letter-spacing: var(--tracking-meta-title);
+    }
+
     .tag-text {
         font-size: var(--text-tag-text);
         line-height: var(--leading-tag-text);
