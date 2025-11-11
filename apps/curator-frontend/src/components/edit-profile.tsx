@@ -1,8 +1,31 @@
+import { FetchHttpClient } from '@effect/platform';
 import { AvatarUpload, Button, Divider, Field, Input, Textarea } from '@geo/design-system';
 import type { Id, Op } from '@graphprotocol/grc-20';
+import { Effect } from 'effect';
 import { useState } from 'react';
+import { EntityInput } from '@/components/entity-input';
 import { network } from '@/config';
-import { SkillsField } from './skills-field';
+import { ApiClient } from '../utils/api-client';
+
+const querySkills = async (query: string) => {
+  const getSkills = Effect.gen(function* () {
+    const apiClient = yield* ApiClient;
+    const skills = yield* apiClient.Profile.getProfileSkills({ urlParams: { query } });
+    return skills;
+  }).pipe(Effect.provide(FetchHttpClient.layer));
+  const result = await Effect.runPromise(getSkills);
+  return result.skills;
+};
+
+const queryCompanies = async (query: string) => {
+  const getCompanies = Effect.gen(function* () {
+    const apiClient = yield* ApiClient;
+    const companies = yield* apiClient.Profile.getProfileCompanies({ urlParams: { query } });
+    return companies;
+  }).pipe(Effect.provide(FetchHttpClient.layer));
+  const result = await Effect.runPromise(getCompanies);
+  return result.companies;
+};
 
 export const EditProfile = ({
   onSubmit,
@@ -59,12 +82,24 @@ export const EditProfile = ({
           <Divider />
           <Field.Root>
             <Field.Label>Works at</Field.Label>
-            <Input type="text" name="worksAt" placeholder="Find or create…" />
+            <EntityInput
+              queryEntities={queryCompanies}
+              onChange={(selected) => {
+                // eslint-disable-next-line no-console
+                console.log('EntityInput selected:', selected);
+              }}
+            />
           </Field.Root>
           <Divider />
           <Field.Root>
             <Field.Label>Skills</Field.Label>
-            <Input type="text" name="skills" placeholder="Find or create…" />
+            <EntityInput
+              queryEntities={querySkills}
+              onChange={(selected) => {
+                // eslint-disable-next-line no-console
+                console.log('EntityInput selected:', selected);
+              }}
+            />
           </Field.Root>
           <Divider />
           <Field.Root>
@@ -83,7 +118,6 @@ export const EditProfile = ({
           </Field.Root>
           <Divider />
         </div>
-        <SkillsField />
         <div className="flex justify-end mt-5 mb-16">
           <Button type="submit" disabled={!name.trim()}>
             Publish

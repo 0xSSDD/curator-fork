@@ -1,7 +1,11 @@
+import { FetchHttpClient } from '@effect/platform';
 import { Button, Dialog, Divider, Field, Input, Textarea } from '@geo/design-system';
 import { createFileRoute } from '@tanstack/react-router';
+import { Effect } from 'effect';
 import { useState } from 'react';
 import { DialogCreateSpace, type DialogCreateSpaceState } from '@/components/dialog-create-space';
+import { EntityInput } from '@/components/entity-input';
+import { ApiClient } from '../utils/api-client';
 
 export const Route = createFileRoute('/design-system')({
   component: RouteComponent,
@@ -78,6 +82,16 @@ const colors = [
   },
 ];
 
+const querySkills = async (query: string) => {
+  const getSkills = Effect.gen(function* () {
+    const apiClient = yield* ApiClient;
+    const skills = yield* apiClient.Profile.getProfileSkills({ urlParams: { query } });
+    return skills;
+  }).pipe(Effect.provide(FetchHttpClient.layer));
+  const result = await Effect.runPromise(getSkills);
+  return result.skills;
+};
+
 function RouteComponent() {
   const [dialogCreateSpaceState, setDialogCreateSpaceState] = useState<DialogCreateSpaceState>('closed');
 
@@ -85,6 +99,17 @@ function RouteComponent() {
     <div className="flex flex-col gap-12">
       <section>
         <h1>Design System</h1>
+      </section>
+
+      <section>
+        <h2 className="pb-2">Entity Input</h2>
+        <EntityInput
+          queryEntities={querySkills}
+          onChange={(selected) => {
+            // eslint-disable-next-line no-console
+            console.log('EntityInput selected:', selected);
+          }}
+        />
       </section>
 
       <section>
