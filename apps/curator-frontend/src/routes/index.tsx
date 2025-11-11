@@ -1,5 +1,6 @@
 import { useGeoAccount } from '@geo/design-system';
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import { useEffect } from 'react';
 import { DialogCreateSpace } from '@/components/dialog-create-space';
 import { EditProfile } from '@/components/edit-profile';
 import { Logout } from '@/components/logout';
@@ -12,13 +13,20 @@ export const Route = createFileRoute('/')({
 
 function Index() {
   const geoAccount = useGeoAccount();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (geoAccount.status === 'signed-out') {
+      navigate({ to: '/bounties' });
+    }
+  }, [geoAccount.status, navigate]);
 
   if (geoAccount.status === 'loading') {
     return <div>Loading…</div>;
   }
 
   if (geoAccount.status === 'signed-out') {
-    return <div className="text-primary-pink bg-accent-purple-bg p-4 ">Sign in to get started</div>;
+    return null;
   }
 
   if (geoAccount.status === 'signed-in') {

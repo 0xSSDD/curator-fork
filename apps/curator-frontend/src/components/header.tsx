@@ -31,9 +31,9 @@ export const Header = () => {
     >
       {isMobile && <CustomSidebarTrigger />}
       <div className="flex items-center gap-1 md:gap-2 text-sm md:text-base text-gray-500 ml-2 sm:ml-0">
-        <span>Section</span>
+        {/* <span>Section</span>
         <span>/</span>
-        <span className="text-gray-900">First Level</span>
+        <span className="text-gray-900">First Level</span> */}
       </div>
       {privyAuthenticated ? (
         <div className="flex items-center gap-2 md:gap-2 ml-auto sm:ml-0">

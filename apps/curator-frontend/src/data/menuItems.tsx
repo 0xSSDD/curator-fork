@@ -1,5 +1,5 @@
 import type { JSX } from 'react';
-import { BountyIcon, DashboardIcon } from '@/icons/icons';
+import { DashboardIcon } from '@/icons/icons';
 
 // Define the type for better IntelliSense and safety
 export interface MenuItem {
@@ -10,18 +10,8 @@ export interface MenuItem {
 
 export const menuItems: MenuItem[] = [
   {
-    title: 'Dashboard',
-    url: '/',
-    icon: <BountyIcon />,
-  },
-  {
     title: 'Bounties',
     url: '/bounties',
-    icon: <DashboardIcon />,
-  },
-  {
-    title: 'Design Demo',
-    url: '/design-system',
     icon: <DashboardIcon />,
   },
 ];

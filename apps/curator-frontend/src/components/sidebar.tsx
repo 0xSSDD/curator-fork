@@ -2,12 +2,12 @@
 
 import { Dialog } from '@base-ui-components/react/dialog';
 import { Tooltip } from '@base-ui-components/react/tooltip';
-import { cn } from '@geo/design-system';
-import { useMatchRoute } from '@tanstack/react-router';
+import { cn, useGeoAccount } from '@geo/design-system';
+import { Link, useMatchRoute } from '@tanstack/react-router';
 import * as React from 'react';
 import { menuItems } from '@/data/menuItems';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { BurgerMenuIcon, CloseSidebarIcon, LogoIcon, OpenSidebarIcon } from '@/icons/icons';
+import { BountyIcon, BurgerMenuIcon, CloseSidebarIcon, LogoIcon, OpenSidebarIcon } from '@/icons/icons';
 
 const SIDEBAR_COOKIE_NAME = 'curator_sidebar_state';
 //const _SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -327,6 +327,17 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<'li'>) {
 export function AppSidebar() {
   const matchRoute = useMatchRoute();
   const { state, isMobile } = useSidebar();
+  const geoAccount = useGeoAccount();
+
+  const dynamicMenuItems = [...menuItems];
+  if (geoAccount.status === 'signed-in') {
+    dynamicMenuItems.unshift({
+      title: 'Dashboard',
+      url: '/',
+      icon: <BountyIcon />,
+    });
+  }
+
   const isExpanded = state === 'expanded';
   return (
     <Sidebar collapsible="icon">
@@ -335,7 +346,11 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              {menuItems.map((item) => {
+              {geoAccount.status !== 'signed-in' && (
+                /* spacer to avoid jumping navigation */
+                <div className="h-8" />
+              )}
+              {dynamicMenuItems.map((item) => {
                 const isActive = !!matchRoute({ to: item.url, fuzzy: false });
                 return (
                   <SidebarMenuItem key={item.title} data-active={isActive}>
@@ -359,6 +374,16 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        <div className="absolute bottom-0 left-0 right-0 p-2">
+          <div className="flex flex-col gap-2">
+            <Link to="/design-system" className="text-sm text-gray-500">
+              Design System
+            </Link>
+            <Link to="/components" className="text-sm text-gray-500">
+              Components
+            </Link>
+          </div>
+        </div>
       </SidebarContent>
     </Sidebar>
   );
