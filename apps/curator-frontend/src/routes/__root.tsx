@@ -10,7 +10,7 @@ const Root = () => {
         {/* Main content area */}
         <main className="flex-1 relative">
           <Header />
-          <div className="sm:pt-16 md:pt-32 sm:px-4 md:px-8 lg:px-32">
+          <div className="pt-16 md:pt-32 px-4 md:px-8 lg:px-32">
             <Outlet />
           </div>
         </main>

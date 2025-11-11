@@ -1,4 +1,5 @@
 import { Tabs } from '@geo/design-system';
+import { BountyFilledIcon } from '@/icons/icons';
 import { BountiesTab } from './bounties-tab';
 import { CommunicationCalls } from './communication-calls';
 import MyBountiesHeader from './my-bounties-header';
@@ -20,7 +21,10 @@ export default function RsvpToNonRecurringDashboard() {
   return (
     <div>
       <div className="flex flex-col gap-6">
-        <SectionTitle number={0} />
+        <SectionTitle
+          icon={<BountyFilledIcon width={32} height={32} />}
+          content={<span className="main-title">0</span>}
+        />
         <div className="flex flex-row gap-6">
           <div className="flex flex-col gap-6 flex-[3]">
             <MyBountiesHeader />

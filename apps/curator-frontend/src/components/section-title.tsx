@@ -1,26 +1,20 @@
-import { BountyFilledIcon } from '@/icons/icons';
-
 interface SectionTitleProps {
-  number: number;
+  icon?: React.ReactNode;
+  content: React.ReactNode;
 }
 
-export default function SectionTitle({ number }: SectionTitleProps) {
+export default function SectionTitle({ icon, content }: SectionTitleProps) {
   return (
     <div
-      className="
-        relative
+      className=" 
         flex flex-row items-center
-        gap-[12px]
-        w-[69px] h-[46px]
+        gap-[12px] 
         main-title
         text-dark-text
       "
     >
-      {/* Icon container */}
-      <BountyFilledIcon width={32} height={32} />
-
-      {/* Text */}
-      <div className="w-[25px] h-[46px] flex items-center flex-none order-1">{number}</div>
+      {icon}
+      {content}
     </div>
   );
 }

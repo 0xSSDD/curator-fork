@@ -1,3 +1,4 @@
+import { BountyFilledIcon } from '@/icons/icons';
 import { CompleteProfileCard, CompleteTrainingCard, JoinSpaceCard } from './complete-profile-card';
 import OnboardingChecklist from './onboarding-checklist';
 import SectionTitle from './section-title';
@@ -7,7 +8,10 @@ export default function OnBoardingDashboard() {
   return (
     <div>
       <div className="flex flex-col gap-6">
-        <SectionTitle number={0} />
+        <SectionTitle
+          icon={<BountyFilledIcon width={32} height={32} />}
+          content={<span className="main-title">0</span>}
+        />
         <div className="flex flex-row gap-6">
           <div className="flex flex-col gap-6 flex-[3]">
             <div className="flex flex-col gap-4">

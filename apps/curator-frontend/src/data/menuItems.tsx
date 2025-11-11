@@ -16,7 +16,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     title: 'Bounties',
-    url: '#',
+    url: '/bounties',
     icon: <DashboardIcon />,
   },
   {
