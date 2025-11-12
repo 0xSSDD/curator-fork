@@ -1,9 +1,10 @@
 import { FetchHttpClient } from '@effect/platform';
+import { Ids } from '@geo/curator-utils';
 import { AvatarUpload, Button, Divider, Field, Input, Textarea } from '@geo/design-system';
-import type { Id, Op } from '@graphprotocol/grc-20';
+import { ContentIds, type Id, type Op } from '@graphprotocol/grc-20';
 import { Effect } from 'effect';
 import { useState } from 'react';
-import { EntityInput } from '@/components/entity-input';
+import { EntityInput, type EntityItem } from '@/components/entity-input';
 import { network } from '@/config';
 import { ApiClient } from '../utils/api-client';
 
@@ -36,16 +37,22 @@ export const EditProfile = ({
     xUrl,
     linkedinUrl,
     avatarData,
+    worksAt,
+    skills,
   }: {
     name: string;
     githubUrl: string;
     xUrl: string;
     linkedinUrl: string;
     avatarData: { id: Id; ops: Op[]; cid: string } | undefined;
+    worksAt: EntityItem[];
+    skills: EntityItem[];
   }) => void;
 }) => {
   const [name, setName] = useState<string>('');
   const [avatarData, setAvatarData] = useState<{ id: Id; ops: Op[]; cid: string } | undefined>(undefined);
+  const [worksAt, setWorksAt] = useState<EntityItem[]>([]);
+  const [skills, setSkills] = useState<EntityItem[]>([]);
 
   return (
     <article className="mt-12">
@@ -60,7 +67,7 @@ export const EditProfile = ({
           if (!name.trim()) {
             return;
           }
-          onSubmit({ name: name.trim(), githubUrl, xUrl, linkedinUrl, avatarData });
+          onSubmit({ name: name.trim(), githubUrl, xUrl, linkedinUrl, avatarData, worksAt, skills });
         }}
       >
         <AvatarUpload network={network} onUpload={(newAvatarData) => setAvatarData(newAvatarData)} />
@@ -84,10 +91,10 @@ export const EditProfile = ({
             <Field.Label>Works at</Field.Label>
             <EntityInput
               queryEntities={queryCompanies}
-              onChange={(selected) => {
-                // eslint-disable-next-line no-console
-                console.log('EntityInput selected:', selected);
+              onChange={(selectedCompanies) => {
+                setWorksAt(selectedCompanies);
               }}
+              typeIds={[Ids.COMPANY_TYPE_ID]}
             />
           </Field.Root>
           <Divider />
@@ -95,10 +102,10 @@ export const EditProfile = ({
             <Field.Label>Skills</Field.Label>
             <EntityInput
               queryEntities={querySkills}
-              onChange={(selected) => {
-                // eslint-disable-next-line no-console
-                console.log('EntityInput selected:', selected);
+              onChange={(selectedSkills) => {
+                setSkills(selectedSkills);
               }}
+              typeIds={[ContentIds.SKILL_TYPE]}
             />
           </Field.Root>
           <Divider />

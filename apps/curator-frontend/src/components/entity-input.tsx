@@ -1,22 +1,23 @@
 import { Combobox as BaseCombobox } from '@base-ui-components/react/combobox';
 import { Button, Divider } from '@geo/design-system';
-import { IdUtils } from '@graphprotocol/grc-20';
+import { Graph, type Id, IdUtils, type Op } from '@graphprotocol/grc-20';
 import React from 'react';
 
-type EntityItem = {
+export type EntityItem = {
   readonly id: string;
   readonly name: string;
-  readonly ops?: readonly unknown[];
+  readonly ops?: readonly Op[];
 };
 
 type EntityInputProps = {
   queryEntities: (query: string) => Promise<readonly EntityItem[]>;
-  onChange?: (selected: readonly EntityItem[]) => void;
+  onChange?: (selected: EntityItem[]) => void;
+  typeIds: readonly Id[];
 };
 
 const placeholder = 'Find or create …';
 
-export function EntityInput({ queryEntities, onChange }: EntityInputProps) {
+export function EntityInput({ queryEntities, onChange, typeIds }: EntityInputProps) {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const id = React.useId();
   const [query, setQuery] = React.useState('');
@@ -176,9 +177,8 @@ export function EntityInput({ queryEntities, onChange }: EntityInputProps) {
                       const name = query;
                       setQuery('');
                       setOpen(false);
-                      const entity = { id, name };
-                      const ops = [{ type: 'create', entity }];
-                      const entityWithOps: EntityItem = { ...entity, ops };
+                      const { ops: createEntityOps } = Graph.createEntity({ id, name, types: [...typeIds] });
+                      const entityWithOps: EntityItem = { id, name, ops: createEntityOps };
                       setSelected((prev) => {
                         const next = [...prev, entityWithOps];
                         onChange?.(next);

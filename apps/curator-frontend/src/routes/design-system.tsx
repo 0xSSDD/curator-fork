@@ -1,5 +1,6 @@
 import { FetchHttpClient } from '@effect/platform';
 import { Button, Dialog, Divider, Field, Input, Textarea } from '@geo/design-system';
+import { ContentIds } from '@graphprotocol/grc-20';
 import { createFileRoute } from '@tanstack/react-router';
 import { Effect } from 'effect';
 import { useState } from 'react';
@@ -109,6 +110,7 @@ function RouteComponent() {
             // eslint-disable-next-line no-console
             console.log('EntityInput selected:', selected);
           }}
+          typeIds={[ContentIds.SKILL_TYPE]}
         />
       </section>
 
