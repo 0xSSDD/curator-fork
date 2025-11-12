@@ -1,9 +1,8 @@
 import { Button } from '@geo/design-system';
-import { IdProfileIcon } from '@/icons/icons';
 import TagCard from './tag-card';
 export function CompleteProfileCard() {
   return (
-    <div className="flex flex-row p-5 sm:py-5 sm:pl-5 sm:pr-0 gap-5 w-full bg-accent-blue-grey-bg rounded-2xl">
+    <div className="flex flex-row p-5 sm:py-5 sm:pl-5 sm:pr-0 gap-0 w-full bg-accent-blue-grey-bg rounded-2xl">
       <div className="flex flex-col justify-between items-start gap-5 flex-grow w-full">
         <div className="flex flex-col items-start gap-1 w-full">
           <h2 className="small-title text-dark-text">Complete your profile</h2>
@@ -11,8 +10,12 @@ export function CompleteProfileCard() {
         </div>
         <Button>Get Started</Button>
       </div>
-      <div className="relative flex items-center justify-end order-1 mt-4 sm:mt-0">
-        <IdProfileIcon className="h-[95px] drop-shadow-[0_12px_16px_rgba(127,132,159,0.2)]" />
+      <div className="w-[129px] h-[95px] relative flex items-center justify-end order-1 ">
+        <img
+          src="/images/Profile-completion@2x.png"
+          alt="id"
+          className="w-full h-full object-contain drop-shadow-[0_12px_16px_rgba(127,132,159,0.2)]"
+        />
       </div>
     </div>
   );
@@ -42,7 +45,7 @@ export function JoinSpaceCard() {
 
 export function CompleteTrainingCard() {
   return (
-    <div className="flex  flex-row p-5 sm:py-5 sm:pl-5 sm:pr-0 gap-5 w-full bg-accent-blue-grey-bg rounded-2xl">
+    <div className="flex  flex-row p-5 sm:py-5 sm:pl-5 sm:pr-0 gap-0 w-full bg-accent-blue-grey-bg rounded-2xl">
       <div className="flex flex-col justify-between items-start gap-5 flex-grow w-full ">
         <div className="flex flex-col items-start gap-1 w-full">
           <h2 className="small-title text-dark-text">Complete training</h2>
@@ -50,11 +53,11 @@ export function CompleteTrainingCard() {
         </div>
         <Button>Finish training</Button>
       </div>
-      <div className="relative flex items-center justify-end order-1 mt-4 sm:mt-0">
+      <div className="w-[129px] h-[95px] relative flex items-center justify-end order-1 ">
         <img
           src="/images/Training_2x.png"
           alt="training"
-          className="h-[95px] drop-shadow-[0_12px_16px_rgba(127,132,159,0.2)]"
+          className="w-full h-full object-contain drop-shadow-[0_12px_16px_rgba(127,132,159,0.2)]"
         />
       </div>
     </div>
