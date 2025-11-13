@@ -8,9 +8,9 @@ const Root = () => {
       <SidebarProvider>
         <AppSidebar />
         {/* Main content area */}
-        <main className="flex-1 relative">
+        <main className="flex-1">
           <Header />
-          <div className="pt-16 md:pt-32 px-4 md:px-8 lg:px-32">
+          <div className="w-full block pt-16 md:pt-32 px-4 md:px-8 lg:px-32">
             <Outlet />
           </div>
         </main>

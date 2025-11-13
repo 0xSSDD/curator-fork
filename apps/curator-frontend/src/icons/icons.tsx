@@ -2,10 +2,14 @@ import AddToCalenederIcon from '../icons/add_to_calender.svg?react';
 import BountyIcon from '../icons/bounty.svg?react';
 import BountyFilledIcon from '../icons/bounty_filled.svg?react';
 import BurgerMenuIcon from '../icons/burger_menu.svg?react';
+import CalenderIcon from '../icons/calendar_icon.svg?react';
+import CloseCircleIcon from '../icons/close_circle.svg?react';
 import CloseIcon from '../icons/close_icon.svg?react';
 import CloseSidebarIcon from '../icons/close_sidebar.svg?react';
 import CompletedIcon from '../icons/completed.svg?react';
+import CreatorIcon from '../icons/creator_icon.svg?react';
 import DifficultyStarIcon from '../icons/difficulty_star.svg?react';
+import EffortIcon from '../icons/effort_icon.svg?react';
 import GoingArrowIcon from '../icons/going_arrow.svg?react';
 import GrayCircleIcon from '../icons/gray_circle.svg?react';
 import HoriDotsIcon from '../icons/hori_dots_icon.svg?react';
@@ -13,8 +17,13 @@ import IdProfileIcon from '../icons/id_profile.svg?react';
 import LogoIcon from '../icons/logo.svg?react';
 import OpenSidebarIcon from '../icons/open_sidebar.svg?react';
 import DashboardIcon from '../icons/overview.svg?react';
+import QuestionMarckCircleIcon from '../icons/question_mark_circle_icon.svg?react';
 import RecurringIcon from '../icons/recurring_icon.svg?react';
-import UnComletedIcon from '../icons/uncompleted.svg?react';
+import SkillIcon from '../icons/skill_icon.svg?react';
+import SpaceIcon from '../icons/space_icon.svg?react';
+import TickCircleIcon from '../icons/tick_circle.svg?react';
+import TimeIcon from '../icons/time.svg?react';
+import UnCompletedIcon from '../icons/uncompleted.svg?react';
 
 function CheckIcon(props: React.ComponentProps<'svg'>) {
   return (
@@ -75,12 +84,21 @@ export {
   LogoIcon,
   OpenSidebarIcon,
   DashboardIcon,
-  UnComletedIcon,
+  UnCompletedIcon,
   BountyIcon,
   DifficultyStarIcon,
   AddToCalenederIcon,
   GoingArrowIcon,
   CloseIcon,
+  CalenderIcon,
+  EffortIcon,
+  SkillIcon,
+  SpaceIcon,
+  CreatorIcon,
+  QuestionMarckCircleIcon,
+  TickCircleIcon,
+  CloseCircleIcon,
+  TimeIcon,
   ClearIcon,
   ChevronDownIcon,
   CheckIcon,

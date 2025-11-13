@@ -1,9 +1,10 @@
 export default function TagCard({
-  image = '/images/education_icon.png',
+  image = '/images/spaces-images/Health.png',
   tag = 'Education',
   action = 'Join',
   hasBackground = true,
   tagNameColor = 'text-dark-text',
+  imgSize = 5,
 }) {
   return (
     <div
@@ -13,9 +14,9 @@ export default function TagCard({
             ${hasBackground ? 'bg-white shadow-[0_0.75rem_1rem_rgba(127,132,159,0.2)]  p-2 h-9' : 'h-5'}`}
     >
       {/* Icon */}
-      <div className="relative w-5 h-5 rounded-md overflow-hidden flex-shrink-0">
+      <div className={` w-${imgSize} h-${imgSize} rounded-md overflow-hidden flex-shrink-0`}>
         {/* Image overlay */}
-        <img src={image} alt={tag} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={image} alt={tag} className={` w-${imgSize} h-${imgSize} object-cover`} />
       </div>
 
       {/* Text group */}

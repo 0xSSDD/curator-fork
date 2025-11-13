@@ -4,7 +4,7 @@ interface TooltipProps {
   children: React.ReactNode;
   content: React.ReactNode;
 }
-export default function Tooltip({ content, children }: TooltipProps) {
+export function Tooltip({ content, children }: TooltipProps) {
   return (
     <BaseTooltip.Provider>
       <BaseTooltip.Root>

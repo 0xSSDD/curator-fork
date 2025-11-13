@@ -26,7 +26,7 @@ export const Header = () => {
   ];
   return (
     <header
-      className="bg-white absolute w-full top-0 left-0 flex items-center px-2 py-2  md:px-5 md:py-2 justify-start sm:justify-between
+      className="bg-white block w-full top-0 left-0 flex items-center px-2 py-2  md:px-5 md:py-2 justify-start sm:justify-between
     border-b border-gray-300 md:border-b-0"
     >
       {isMobile && <CustomSidebarTrigger />}

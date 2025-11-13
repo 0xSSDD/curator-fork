@@ -1,5 +1,4 @@
-import { ActionPopover, Divider, Tag } from '@geo/design-system';
-import Tooltip from '@geo/design-system/components/tooltip';
+import { ActionPopover, Divider, Tag, Tooltip } from '@geo/design-system';
 import React from 'react';
 import { AddToCalenederIcon, ClearIcon, GoingArrowIcon, HoriDotsIcon, RecurringIcon } from '@/icons/icons';
 import TagCard from './tag-card';
@@ -205,6 +204,7 @@ export function MeetingCard({
               hasBackground={false}
               action=""
               tagNameColor="text-grey-light-text"
+              imgSize={4}
             />
           ))}
         </div>

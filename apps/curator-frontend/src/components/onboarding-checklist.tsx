@@ -1,5 +1,5 @@
 import { Tag } from '@geo/design-system/components/tag';
-import { BountyFilledIcon, CompletedIcon, GrayCircleIcon, UnComletedIcon } from '@/icons/icons';
+import { BountyFilledIcon, CompletedIcon, GrayCircleIcon, UnCompletedIcon } from '@/icons/icons';
 
 export default function OnboardingChecklist() {
   return (
@@ -33,7 +33,7 @@ function StepItem({ text, isCompleted, isWaiting }: StepItemProps) {
   return (
     <div className="flex items-center gap-3 w-full relative">
       <div className="w-3 h-3 ">
-        {isCompleted ? <CompletedIcon /> : isWaiting ? <UnComletedIcon /> : <GrayCircleIcon />}
+        {isCompleted ? <CompletedIcon /> : isWaiting ? <UnCompletedIcon /> : <GrayCircleIcon />}
       </div>
 
       <span className={`tag-text ${isCompleted || isWaiting ? 'text-dark-text' : 'text-grey-light-text'}`}>{text}</span>

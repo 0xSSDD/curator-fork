@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as DesignSystemRouteImport } from './routes/design-system'
 import { Route as ComponentsRouteImport } from './routes/components'
+import { Route as BountyDetailsRouteImport } from './routes/bounty-details'
 import { Route as BountiesRouteImport } from './routes/bounties'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const DesignSystemRoute = DesignSystemRouteImport.update({
 const ComponentsRoute = ComponentsRouteImport.update({
   id: '/components',
   path: '/components',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BountyDetailsRoute = BountyDetailsRouteImport.update({
+  id: '/bounty-details',
+  path: '/bounty-details',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BountiesRoute = BountiesRouteImport.update({
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bounties': typeof BountiesRoute
+  '/bounty-details': typeof BountyDetailsRoute
   '/components': typeof ComponentsRoute
   '/design-system': typeof DesignSystemRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bounties': typeof BountiesRoute
+  '/bounty-details': typeof BountyDetailsRoute
   '/components': typeof ComponentsRoute
   '/design-system': typeof DesignSystemRoute
 }
@@ -51,20 +59,33 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/bounties': typeof BountiesRoute
+  '/bounty-details': typeof BountyDetailsRoute
   '/components': typeof ComponentsRoute
   '/design-system': typeof DesignSystemRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/bounties' | '/components' | '/design-system'
+  fullPaths:
+    | '/'
+    | '/bounties'
+    | '/bounty-details'
+    | '/components'
+    | '/design-system'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/bounties' | '/components' | '/design-system'
-  id: '__root__' | '/' | '/bounties' | '/components' | '/design-system'
+  to: '/' | '/bounties' | '/bounty-details' | '/components' | '/design-system'
+  id:
+    | '__root__'
+    | '/'
+    | '/bounties'
+    | '/bounty-details'
+    | '/components'
+    | '/design-system'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BountiesRoute: typeof BountiesRoute
+  BountyDetailsRoute: typeof BountyDetailsRoute
   ComponentsRoute: typeof ComponentsRoute
   DesignSystemRoute: typeof DesignSystemRoute
 }
@@ -83,6 +104,13 @@ declare module '@tanstack/react-router' {
       path: '/components'
       fullPath: '/components'
       preLoaderRoute: typeof ComponentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bounty-details': {
+      id: '/bounty-details'
+      path: '/bounty-details'
+      fullPath: '/bounty-details'
+      preLoaderRoute: typeof BountyDetailsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bounties': {
@@ -105,6 +133,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BountiesRoute: BountiesRoute,
+  BountyDetailsRoute: BountyDetailsRoute,
   ComponentsRoute: ComponentsRoute,
   DesignSystemRoute: DesignSystemRoute,
 }

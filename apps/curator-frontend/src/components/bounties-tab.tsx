@@ -5,7 +5,7 @@ import TagCard from './tag-card';
 export function BountiesTab() {
   const bounties: BountyItem[] = [
     {
-      category: { name: 'World affairs', image: '/images/world_affairs_icon.png' },
+      category: { name: 'Medicine', image: '/images/spaces-images/Medicine.png' },
       points: '+3K',
       title: 'Fix errors and issues',
       description: 'Add golf players including information such as name, description, years active, tournaments played',
@@ -21,7 +21,7 @@ export function BountiesTab() {
       difficulty: 'Hard',
     },
     {
-      category: { name: 'Health', image: '/images/health_icon.png' },
+      category: { name: 'Health', image: '/images/spaces-images/Health.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -29,7 +29,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'Crypto', image: '/images/crypto_icon.png' },
+      category: { name: 'Crypto', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -37,7 +37,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'World affairs', image: '/images/world_affairs_icon.png' },
+      category: { name: 'World affairs', image: '/images/spaces-images/Podcasts.png' },
       points: '+3K',
       title: 'Fix errors and issues',
       description: 'Add golf players including information such as name, description, years active, tournaments played',
@@ -45,7 +45,7 @@ export function BountiesTab() {
       difficulty: 'Moderate',
     },
     {
-      category: { name: 'Education', image: '/images/education_icon.png' },
+      category: { name: 'Education', image: '/images/spaces-images/Podcasts.png' },
       points: '+5K',
       title: 'Optimize API performance',
       description: 'Improve response times by 20% using caching and query tuning.',
@@ -53,7 +53,7 @@ export function BountiesTab() {
       difficulty: 'Hard',
     },
     {
-      category: { name: 'Health', image: '/images/health_icon.png' },
+      category: { name: 'Health', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -61,7 +61,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'Crypto', image: '/images/crypto_icon.png' },
+      category: { name: 'Crypto', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -69,7 +69,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'World affairs', image: '/images/world_affairs_icon.png' },
+      category: { name: 'World affairs', image: '/images/spaces-images/Podcasts.png' },
       points: '+3K',
       title: 'Fix errors and issues',
       description: 'Add golf players including information such as name, description, years active, tournaments played',
@@ -77,7 +77,7 @@ export function BountiesTab() {
       difficulty: 'Moderate',
     },
     {
-      category: { name: 'Education', image: '/images/education_icon.png' },
+      category: { name: 'Education', image: '/images/spaces-images/Podcasts.png' },
       points: '+5K',
       title: 'Optimize API performance',
       description: 'Improve response times by 20% using caching and query tuning.',
@@ -85,7 +85,7 @@ export function BountiesTab() {
       difficulty: 'Hard',
     },
     {
-      category: { name: 'Health', image: '/images/health_icon.png' },
+      category: { name: 'Health', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -93,7 +93,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'Crypto', image: '/images/crypto_icon.png' },
+      category: { name: 'Crypto', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -101,7 +101,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'World affairs', image: '/images/world_affairs_icon.png' },
+      category: { name: 'World affairs', image: '/images/spaces-images/Podcasts.png' },
       points: '+3K',
       title: 'Fix errors and issues',
       description: 'Add golf players including information such as name, description, years active, tournaments played',
@@ -109,7 +109,7 @@ export function BountiesTab() {
       difficulty: 'Moderate',
     },
     {
-      category: { name: 'Education', image: '/images/education_icon.png' },
+      category: { name: 'Education', image: '/images/spaces-images/Podcasts.png' },
       points: '+5K',
       title: 'Optimize API performance',
       description: 'Improve response times by 20% using caching and query tuning.',
@@ -117,7 +117,7 @@ export function BountiesTab() {
       difficulty: 'Hard',
     },
     {
-      category: { name: 'Health', image: '/images/health_icon.png' },
+      category: { name: 'Health', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -125,7 +125,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'Crypto', image: '/images/crypto_icon.png' },
+      category: { name: 'Crypto', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -133,7 +133,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'World affairs', image: '/images/world_affairs_icon.png' },
+      category: { name: 'World affairs', image: '/images/spaces-images/Podcasts.png' },
       points: '+3K',
       title: 'Fix errors and issues',
       description: 'Add golf players including information such as name, description, years active, tournaments played',
@@ -141,7 +141,7 @@ export function BountiesTab() {
       difficulty: 'Moderate',
     },
     {
-      category: { name: 'Education', image: '/images/education_icon.png' },
+      category: { name: 'Education', image: '/images/spaces-images/Podcasts.png' },
       points: '+5K',
       title: 'Optimize API performance',
       description: 'Improve response times by 20% using caching and query tuning.',
@@ -149,7 +149,7 @@ export function BountiesTab() {
       difficulty: 'Hard',
     },
     {
-      category: { name: 'Health', image: '/images/health_icon.png' },
+      category: { name: 'Health', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -157,7 +157,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'Crypto', image: '/images/crypto_icon.png' },
+      category: { name: 'Crypto', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -165,7 +165,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'World affairs', image: '/images/world_affairs_icon.png' },
+      category: { name: 'World affairs', image: '/images/spaces-images/Podcasts.png' },
       points: '+3K',
       title: 'Fix errors and issues',
       description: 'Add golf players including information such as name, description, years active, tournaments played',
@@ -173,7 +173,7 @@ export function BountiesTab() {
       difficulty: 'Moderate',
     },
     {
-      category: { name: 'Education', image: '/images/education_icon.png' },
+      category: { name: 'Education', image: '/images/spaces-images/Podcasts.png' },
       points: '+5K',
       title: 'Optimize API performance',
       description: 'Improve response times by 20% using caching and query tuning.',
@@ -181,7 +181,7 @@ export function BountiesTab() {
       difficulty: 'Hard',
     },
     {
-      category: { name: 'Health', image: '/images/health_icon.png' },
+      category: { name: 'Health', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -189,7 +189,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'Crypto', image: '/images/crypto_icon.png' },
+      category: { name: 'Crypto', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -197,7 +197,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'World affairs', image: '/images/world_affairs_icon.png' },
+      category: { name: 'World affairs', image: '/images/spaces-images/Podcasts.png' },
       points: '+3K',
       title: 'Fix errors and issues',
       description: 'Add golf players including information such as name, description, years active, tournaments played',
@@ -205,7 +205,7 @@ export function BountiesTab() {
       difficulty: 'Moderate',
     },
     {
-      category: { name: 'Education', image: '/images/education_icon.png' },
+      category: { name: 'Education', image: '/images/spaces-images/Podcasts.png' },
       points: '+5K',
       title: 'Optimize API performance',
       description: 'Improve response times by 20% using caching and query tuning.',
@@ -213,7 +213,7 @@ export function BountiesTab() {
       difficulty: 'Hard',
     },
     {
-      category: { name: 'Health', image: '/images/health_icon.png' },
+      category: { name: 'Health', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -221,7 +221,7 @@ export function BountiesTab() {
       difficulty: 'Easy',
     },
     {
-      category: { name: 'Crypto', image: '/images/crypto_icon.png' },
+      category: { name: 'Crypto', image: '/images/spaces-images/Podcasts.png' },
       points: '+2K',
       title: 'Redesign landing page',
       description: 'Modernize layout and improve accessibility compliance.',
@@ -264,7 +264,7 @@ export function BountyCard({ item }: BountyCardProps) {
     >
       <div className="flex flex-col items-start gap-5 w-full">
         <div className="flex flex-row justify-between items-center gap-6 w-full">
-          <TagCard image={item.category.image} tag={item.category.name} action="" hasBackground={false} />
+          <TagCard imgSize={5} image={item.category.image} tag={item.category.name} action="" hasBackground={false} />
           <Tag variant="points" icon={<BountyFilledIcon />} text={item.points} />
         </div>
 

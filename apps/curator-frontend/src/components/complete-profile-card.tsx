@@ -33,10 +33,10 @@ export function JoinSpaceCard() {
           </p>
         </div>
         <div className="flex flex-row flex-wrap items-center gap-2 w-full p-0">
-          <TagCard image="/images/education_icon.png" tag="Education" action="Join" />
-          <TagCard image="/images/world_affairs_icon.png" tag="World affairs" action="Join" />
-          <TagCard image="/images/health_icon.png" tag="Health" action="Join" />
-          <TagCard image="/images/crypto_icon.png" tag="Crypto" action="Join" />
+          <TagCard imgSize={4} image="/images/education_icon.png" tag="Education" action="Join" />
+          <TagCard imgSize={4} image="/images/world_affairs_icon.png" tag="World affairs" action="Join" />
+          <TagCard imgSize={4} image="/images/health_icon.png" tag="Health" action="Join" />
+          <TagCard imgSize={4} image="/images/crypto_icon.png" tag="Crypto" action="Join" />
         </div>
       </div>
     </div>
