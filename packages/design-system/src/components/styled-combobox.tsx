@@ -6,7 +6,8 @@ export interface StyledComboboxItem {
   label: string;
   value: string;
   image: string;
-  selected: boolean;
+  isSelected: boolean;
+  isAllOption: boolean;
 }
 
 interface StyledComboboxProps {
@@ -22,8 +23,8 @@ export function StyledCombobox({ items, multiple = false, onChange, nameOfDropdo
   const rootId = React.useId();
 
   // ✅ Maintain internal selection state
-  const [selectedItems, setSelectedItems] = React.useState<StyledComboboxItem[]>(items.filter((i) => i.selected));
-  const defaultValues = items.filter((i) => i.selected);
+  const [selectedItems, setSelectedItems] = React.useState<StyledComboboxItem[]>(items.filter((i) => i.isSelected));
+  const defaultValues = items.filter((i) => i.isSelected);
 
   // Utility: convert item to string label
   const itemToStringLabel = (item: StyledComboboxItem) => item.label;
@@ -47,6 +48,66 @@ export function StyledCombobox({ items, multiple = false, onChange, nameOfDropdo
     return '';
   };
 
+  const onValueChange = (
+    value: StyledComboboxItem | StyledComboboxItem[],
+    eventDetails: BaseCombobox.Root.ChangeEventDetails,
+  ) => {
+    console.log('onValueChange', value, eventDetails);
+
+    let normalized: StyledComboboxItem[] = [];
+
+    if (multiple && Array.isArray(value)) {
+      const allOption = items.find((i) => i.isAllOption);
+
+      if (allOption) {
+        const hasAll = value.some((v) => v.value === allOption.value);
+        const allIsLast = value?.[value.length - 1]?.value === allOption.value;
+
+        if (hasAll && allIsLast) {
+          console.log("✅ 'All' is last and selected — keeping only 'All'");
+          normalized = [allOption];
+        } else {
+          normalized = value.filter((v) => v.value !== allOption.value);
+
+          const allExceptAll = items.filter((i) => i.value !== allOption.value);
+          if (normalized.length === allExceptAll.length) {
+            console.log("✅ All items (except 'All') selected — replacing with 'All'");
+            normalized = [allOption];
+          }
+        }
+      } else {
+        normalized = value;
+      }
+
+      // 🔄 Update each item's isSelected flag
+      items.forEach((item) => {
+        item.isSelected = normalized.some((selected) => selected.value === item.value);
+      });
+
+      setSelectedItems(normalized);
+    } else if (!multiple && value) {
+      normalized = [value as StyledComboboxItem];
+
+      // 🔄 Update single selection
+      items.forEach((item) => {
+        item.isSelected = item.value === (value as StyledComboboxItem).value;
+      });
+
+      setSelectedItems(normalized);
+    } else {
+      // No selection
+      items.forEach((item) => {
+        item.isSelected = false;
+      });
+      setSelectedItems([]);
+    }
+
+    // Notify parent
+    if (onChange) {
+      onChange(multiple ? normalized : normalized[0]);
+    }
+  };
+
   return (
     <BaseCombobox.Root
       id={rootId}
@@ -55,38 +116,32 @@ export function StyledCombobox({ items, multiple = false, onChange, nameOfDropdo
       items={items}
       itemToStringLabel={itemToStringLabel}
       filter={customFilter}
-      onValueChange={(value, eventDetails) => {
-        console.log('onValueChange', value, eventDetails);
-        let normalized: StyledComboboxItem[] = [];
-
-        if (multiple && Array.isArray(value)) {
-          normalized = value;
-          setSelectedItems(normalized);
-        } else if (!multiple && value) {
-          normalized = [value as StyledComboboxItem];
-          setSelectedItems(normalized);
-        } else {
-          setSelectedItems([]);
-        }
-
-        if (onChange) {
-          onChange(multiple ? normalized : normalized[0]);
-        }
-      }}
+      onValueChange={onValueChange}
+      value={multiple ? selectedItems : selectedItems[0] || undefined}
     >
       {/* Trigger Button */}
       <BaseCombobox.Trigger
-        className="flex flex-row items-center justify-between gap-2 px-[6px] pb-[1px]
+        className="custom-dropdown flex flex-row items-center justify-between gap-6 px-[6px] pb-[1px]
           w-auto min-w-[80px] max-w-full h-[24px] border border-grey-light rounded-[6px] bg-white"
       >
-        {selectedItems.length > 0 && <OverlapImages images={selectedItems.map((c) => c.image)} />}
+        <div className="flex flex-row gap-2">
+          {selectedItems.length > 0 && !selectedItems.some((c) => c.isAllOption) && (
+            <OverlapImages images={selectedItems.map((c) => c.image)} />
+          )}
 
-        {getSelectedSummary(selectedItems) && <span className="tag-text">{getSelectedSummary(selectedItems)}</span>}
+          {getSelectedSummary(selectedItems) && <span className="tag-text">{getSelectedSummary(selectedItems)}</span>}
+        </div>
 
-        <BaseCombobox.Icon>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <title>icon</title>
-            <path d="M3 5L6 8L9 5" stroke="#606060" strokeWidth="1" />
+        <BaseCombobox.Icon className={'down-arrow-icon'}>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <title>down arrow</title>
+            <path d="M0.75 4.25L6 9.5L11.25 4.25" stroke="currentColor" stroke-linecap="round" />
+          </svg>
+        </BaseCombobox.Icon>
+        <BaseCombobox.Icon className={'up-arrow-icon'}>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <title>up arrow</title>
+            <path d="M11.25 8.75L6 3.5L0.75 8.75" stroke="currentColor" stroke-linecap="round" />
           </svg>
         </BaseCombobox.Icon>
       </BaseCombobox.Trigger>
@@ -96,16 +151,16 @@ export function StyledCombobox({ items, multiple = false, onChange, nameOfDropdo
         <BaseCombobox.Positioner align="start" className="outline-none" sideOffset={4}>
           <BaseCombobox.Popup
             className="box-border flex flex-col items-start p-1 gap-1 
-              w-full max-h-[200px] bg-white border border-[#DBDBDB] 
+              w-full max-h-[200px] bg-white border border-grey-light 
               shadow-[0_4px_25px_rgba(0,0,0,0.25)] rounded-[12px]"
           >
             {/* Search box */}
             {searchable && (
               <div
                 className="flex flex-row items-center gap-2 px-3 py-2.5 h-9 
-                bg-white border border-[#EEEEEE] rounded-[8px]"
+                bg-white border border-divider rounded-[8px]"
               >
-                <SearchIcon className="w-4 h-4 text-[#606060]" />
+                <SearchIcon className="w-4 h-4 text-grey-light-text" />
 
                 <BaseCombobox.Input
                   id={id}
@@ -130,12 +185,8 @@ export function StyledCombobox({ items, multiple = false, onChange, nameOfDropdo
                   key={item.value}
                   value={item}
                   aria-label={item.label}
-                  className={`flex flex-row items-center justify-between px-3 py-2.5 w-[209px] h-9 rounded-[8px] 
-                    ${
-                      selectedItems.find((i) => i.value === item.value)
-                        ? 'bg-accent-blue-grey-bg'
-                        : 'bg-white hover:bg-accent-blue-grey-bg'
-                    } 
+                  className={`flex flex-row items-center justify-between px-3 py-2.5 w-[209px] h-9 rounded-[8px]  hover:bg-accent-blue-grey-hover
+                    ${selectedItems.find((i) => i.value === item.value) ? 'bg-accent-blue-grey-bg' : ' bg-white'} 
                     transition-colors duration-150`}
                 >
                   <div className="flex flex-row items-center gap-3">
@@ -144,11 +195,6 @@ export function StyledCombobox({ items, multiple = false, onChange, nameOfDropdo
                     </div>
                     <span className="button-text text-dark-text">{item.label}</span>
                   </div>
-
-                  {/* Checkmark icon when selected */}
-                  {selectedItems.find((i) => i.value === item.value) && (
-                    <CheckIcon className="w-3 h-3 text-grey-light-text" />
-                  )}
                 </BaseCombobox.Item>
               )}
             </BaseCombobox.List>
@@ -164,15 +210,6 @@ function SearchIcon(props: React.ComponentProps<'svg'>) {
       <title>search</title>
       <rect x="0.5" y="0.5" width="12" height="12" rx="6" stroke="currentColor" />
       <path d="M15.33 15.33L11 11" stroke="currentColor" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function CheckIcon(props: React.ComponentProps<'svg'>) {
-  return (
-    <svg fill="none" viewBox="0 0 10 10" width="10" height="10" {...props}>
-      <title>check</title>
-      <path d="M1 5L4 8L9 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

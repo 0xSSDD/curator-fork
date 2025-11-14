@@ -2,3 +2,25 @@
     padding: 1rem;
     border: 1px solid black;
 }
+
+/* When popup is open */
+.custom-dropdown[data-popup-open]>.down-arrow-icon {
+    display: none;
+    /* hide down arrow */
+}
+
+.custom-dropdown[data-popup-open]>.up-arrow-icon {
+    display: block;
+    /* show up arrow */
+}
+
+/* When popup is closed */
+.custom-dropdown:not([data-popup-open])>.down-arrow-icon {
+    display: block;
+    /* show down arrow */
+}
+
+.custom-dropdown:not([data-popup-open])>.up-arrow-icon {
+    display: none;
+    /* hide up arrow */
+}

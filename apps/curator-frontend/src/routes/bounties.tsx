@@ -1,6 +1,5 @@
-import { Select, StyledCombobox, type StyledComboboxItem } from '@geo/design-system';
+import { Select, StyledCombobox } from '@geo/design-system';
 import { createFileRoute } from '@tanstack/react-router';
-import { useState } from 'react';
 import { BountiesTab } from '@/components/bounties-tab';
 import SectionTitle from '@/components/section-title';
 import { spaceItems } from '@/data/spaces';
@@ -10,14 +9,6 @@ export const Route = createFileRoute('/bounties')({
   component: RouteComponent,
 });
 function RouteComponent() {
-  const [_spacesOptions, _setSpacesOptions] = useState<StyledComboboxItem[]>(
-    spaceItems.map((c) => ({
-      image: c.imagePath,
-      value: c.id,
-      label: c.name,
-      selected: c.id === '0', // default selected
-    })),
-  );
   return (
     <div className="flex flex-col gap-6">
       <SectionTitle
@@ -34,7 +25,8 @@ function RouteComponent() {
               image: c.imagePath,
               value: c.id,
               label: c.name,
-              selected: c.id === '0', // default selected
+              isSelected: c.id === '0',
+              isAllOption: c.id === '0',
             }))}
             onChange={(v) => {
               const selected = Array.isArray(v) ? v : [];
@@ -42,25 +34,25 @@ function RouteComponent() {
             }}
           />
           <Select
+            nameOfDropdown="Status"
             multiple={true}
-            defaultValue={'All'}
             items={[
-              { label: 'All', value: 'All' },
-              { label: 'Open', value: 'Open' },
-              { label: 'Close', value: 'Close' },
-              { label: 'Option01', value: '01' },
-              { label: 'Option02', value: '02' },
-              { label: 'Option03', value: '03' },
+              { label: 'All', value: 'All', isAllOption: true, isSelected: true },
+              { label: 'Open', value: 'Open', isAllOption: false, isSelected: false },
+              { label: 'Close', value: 'Close', isAllOption: false, isSelected: false },
+              { label: 'Option01', value: '01', isAllOption: false, isSelected: false },
+              { label: 'Option02', value: '02', isAllOption: false, isSelected: false },
+              { label: 'Option03', value: '03', isAllOption: false, isSelected: false },
             ]}
           />
           <Select
-            defaultValue="Highest payout"
+            nameOfDropdown="Payout"
             items={[
-              { label: 'Highest payout', value: 'Highest payout' },
-              { label: 'P0', value: 'P0' },
-              { label: 'P01', value: 'P01' },
-              { label: 'P02', value: 'P02' },
-              { label: 'P03', value: 'P03' },
+              { label: 'Highest payout', value: 'Highest payout', isAllOption: false, isSelected: true },
+              { label: 'P0', value: 'P0', isAllOption: false, isSelected: false },
+              { label: 'P01', value: 'P01', isAllOption: false, isSelected: false },
+              { label: 'P02', value: 'P02', isAllOption: false, isSelected: false },
+              { label: 'P03', value: 'P03', isAllOption: false, isSelected: false },
             ]}
           />
         </div>

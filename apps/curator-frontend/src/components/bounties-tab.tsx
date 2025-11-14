@@ -274,16 +274,16 @@ export function BountyCard({ item }: BountyCardProps) {
         </div>
       </div>
 
-      <div className="flex flex-col items-start gap-2 w-full">
-        <div className="flex flex-row justify-between items-start gap-1 w-full">
+      <div className="flex flex-col items-start gap-3 w-full">
+        <div className="flex flex-row justify-between items-end gap-1 w-full">
           <div className="tag-text flex items-center text-dark-text">Max contributors</div>
           <div className="flex flex-row items-center gap-1.5 tag-text text-dark-text">{item.maxContributors}</div>
         </div>
 
-        <div className="flex flex-row justify-between items-start gap-1 w-full">
+        <div className="flex flex-row justify-between items-end gap-1 w-full">
           <div className="tag-text text-dark-text">Difficulty</div>
-          <div className="flex flex-row items-center gap-1.5">
-            <DifficultyStarIcon /> {item.difficulty}
+          <div className="flex flex-row items-end gap-1.5">
+            <DifficultyStarIcon /> <div className="tag-text text-dark-text"> {item.difficulty}</div>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ interface OverlapImagesProps {
 
 export function OverlapImages({ images }: OverlapImagesProps) {
   return (
-    <div className="flex items-center w-10 h-4 rounded-[4px] overflow-hidden">
+    <div className="flex items-center w-max h-4 rounded-[4px] overflow-hidden">
       {images.slice(0, 3).map((src, i) => (
         <img
           key={`img_${i + 1}`}
