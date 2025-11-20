@@ -1,3 +1,5 @@
 {
+  "buildCommand": "echo 'Build already completed in CI'",
+  "outputDirectory": ".",
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
