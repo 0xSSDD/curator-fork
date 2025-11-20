@@ -1,0 +1,82 @@
+name: Vercel Deploy (Production on main)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: vercel-prod-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  CI: true
+  NODE_VERSION: ${{ vars.NODE_VERSION || '22.x' }}
+  # Build-time envs for Vite: prefer Secrets, fall back to Variables
+  VITE_HYPERGRAPH_SYNC_SERVER_ORIGIN: ${{ secrets.VITE_HYPERGRAPH_SYNC_SERVER_ORIGIN || vars.VITE_HYPERGRAPH_SYNC_SERVER_ORIGIN }}
+  VITE_HYPERGRAPH_CHAIN: ${{ secrets.VITE_HYPERGRAPH_CHAIN || vars.VITE_HYPERGRAPH_CHAIN }}
+  VITE_HYPERGRAPH_RPC_URL: ${{ secrets.VITE_HYPERGRAPH_RPC_URL || vars.VITE_HYPERGRAPH_RPC_URL }}
+  VITE_PRIVY_APP_ID: ${{ secrets.VITE_PRIVY_APP_ID || vars.VITE_PRIVY_APP_ID }}
+  VITE_KNOWLEDGE_GRAPH_NETWORK: ${{ secrets.VITE_KNOWLEDGE_GRAPH_NETWORK || vars.VITE_KNOWLEDGE_GRAPH_NETWORK }}
+  VITE_CURATOR_API_URL: ${{ secrets.VITE_CURATOR_API_URL || vars.VITE_CURATOR_API_URL }}
+
+jobs:
+  deploy-prod:
+    name: Build and Deploy (main → Vercel Production)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup pnpm (10.18.3)
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.18.3
+          run_install: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build shared packages
+        run: |
+          pnpm --filter @geo/design-system build
+          pnpm --filter @geo/curator-utils build
+
+      - name: Build curator-frontend
+        run: pnpm --filter ./apps/curator-frontend build
+
+      - name: Verify build output exists
+        run: test -d apps/curator-frontend/dist
+
+      - name: Show Vercel CLI version
+        run: pnpm dlx vercel@latest --version
+
+      - name: Deploy to Vercel Production
+        id: vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          DEPLOY_PATH="apps/curator-frontend/dist"
+          CONFIG_PATH="apps/curator-frontend/vercel.json"
+          url=$(pnpm dlx vercel deploy "$DEPLOY_PATH" --yes --prod --token "$VERCEL_TOKEN" -A "$CONFIG_PATH")
+          url=$(echo "$url" | tail -n1 | tr -d '\n')
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "Production deployment: $url" >> "$GITHUB_STEP_SUMMARY"
+          echo "Deployment URL: $url"
